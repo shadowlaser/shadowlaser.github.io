@@ -5,16 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>使用octopress部署github博客 - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Blog Archive 2013 正确使用工具
-Oct 17 2013 未成行的大寺
-Oct 04 2013 挣扎后的安心
-Oct 01 2013 工作变动和一些记录
-Sep 28 2013 使用octopress部署github博客
-Sep 14 2013 Recent Posts &hellip;">
+  <meta name="description" content="安装octopress 使用这个网址：安装octopress 在使用过程中由于网络环境的问题，所以需要更换ruby的源：具体请看淘宝源
+git clone git://github.com/imathis/octopress.git yourname.github.io
+cd yourname. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +20,7 @@ Sep 14 2013 Recent Posts &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shadowlaser.github.io/blog/archives">
+  <link rel="canonical" href="http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -69,71 +66,95 @@ Sep 14 2013 Recent Posts &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">使用octopress部署github博客</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-14T15:45:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><ul>
+<li><h2>安装octopress</h2>
 
-  
-  <h2>2013</h2>
+<h3>使用这个网址：<a href="http://voodeng.com/blog/2012/09/02/octopress-on-github/">安装octopress</a></h3>
 
-<article>
-  
-<h1><a href="/blog/2013/10/17/zheng-que-shi-yong-gong-ju/">正确使用工具</a></h1>
-<time datetime="2013-10-17T20:42:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>17</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/10/04/wei-cheng-xing-de-da-si/">未成行的大寺</a></h1>
-<time datetime="2013-10-04T15:47:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>04</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/10/01/zheng-zha-hou-de-an-xin/">挣扎后的安心</a></h1>
-<time datetime="2013-10-01T08:03:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>01</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/09/28/gong-zuo-bian-dong-he-%5B%3F%5D-xie-ji-lu/">工作变动和一些记录</a></h1>
-<time datetime="2013-09-28T09:16:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>28</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke/">使用octopress部署github博客</a></h1>
-<time datetime="2013-09-14T15:45:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>14</span> <span class='year'>2013</span></time>
-
-
-</article>
+<h3>在使用过程中由于网络环境的问题，所以需要更换ruby的源：具体请看<a href="http://ruby.taobao.org/">淘宝源</a></h3></li>
+<li><code>git clone git://github.com/imathis/octopress.git yourname.github.io</code></li>
+<li><code>cd yourname.github.io</code></li>
+<li>修改Gemfile和Gemfile.lock文件中的<code>源</code>，国内网络环境不稳定。</li>
+<li><code>bundle update</code> 可能需要 <code>bundle install</code>安装所需要的</li>
+<li><code>rake install</code> 安装默认的主题</li>
+<li>修改_config.yml文件中，google analystic的id 和disqus的评论的名字等</li>
+<li><p><code>rake gen_deploy</code>发布空的博客的系统。你的远端的blog中有文章等内容的时候，你需要看下面的内容</p></li>
+<li><h2>有了内容怎么办</h2></li>
+<li>在_deploy文件夹下使用<code>git pull origin master</code>，获取远端内容（这时git的源其实已经成为了你的yourname.github.io中的master分支了，在yourname.github.io文件夹中内容推送到远端的source的分支了，两个文件夹的分支是完全不同的）</li>
+<li>然后在yourname.github.io文件夹下再使用<code>rake gen_deploy</code></li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-14T15:45:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke/" data-via="" data-counturl="http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/09/28/gong-zuo-bian-dong-he-%5B%3F%5D-xie-ji-lu/" title="Next Post: 工作变动和一些记录">工作变动和一些记录 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

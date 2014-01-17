@@ -1,8 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://shadowlaser.github.io/</loc>
+        <loc>
+            http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke/
+        </loc>
         <lastmod>2014-01-17T18:23:29+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://shadowlaser.github.io/blog/2013/09/28/gong-zuo-bian-dong-he-%5B%3F%5D-xie-ji-lu/
+        </loc>
+        <lastmod>2014-01-17T18:23:29+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shadowlaser.github.io/blog/2013/10/01/zheng-zha-hou-de-an-xin/</loc>
+        <lastmod>2014-01-17T18:23:29+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shadowlaser.github.io/blog/2013/10/04/wei-cheng-xing-de-da-si/</loc>
+        <lastmod>2014-01-17T18:32:21+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shadowlaser.github.io/blog/2013/10/17/zheng-que-shi-yong-gong-ju/</loc>
+        <lastmod>2014-01-17T18:23:29+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shadowlaser.github.io/</loc>
+        <lastmod>2014-01-17T18:32:21+08:00</lastmod>
     </url>
     <url>
         <loc>http://shadowlaser.github.io/robots.txt</loc>
@@ -10,6 +34,6 @@
     </url>
     <url>
         <loc>http://shadowlaser.github.io/blog/archives/</loc>
-        <lastmod>2014-01-17T18:23:29+08:00</lastmod>
+        <lastmod>2014-01-17T18:32:21+08:00</lastmod>
     </url>
 </urlset>
