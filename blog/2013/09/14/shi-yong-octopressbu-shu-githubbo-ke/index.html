@@ -5,8 +5,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用octopress部署github博客 - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>使用octopress部署github博客 - Shadowlaser Blog</title>
+  <meta name="author" content="shadowlaser">
 
   
   <meta name="description" content="安装octopress 使用这个网址：安装octopress 在使用过程中由于网络环境的问题，所以需要更换ruby的源：具体请看淘宝源
@@ -23,7 +23,7 @@ cd yourname. &hellip;">
   <link rel="canonical" href="http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Shadowlaser Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -33,14 +33,26 @@ cd yourname. &hellip;">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-43080047-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">Shadowlaser Blog</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>用文字记录下来</h2>
   
 </hgroup>
 
@@ -88,6 +100,9 @@ cd yourname. &hellip;">
 
 <time datetime="2013-09-14T15:45:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2013</time>
         
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://shadowlaser.github.io">Comments</a>
+        
       </p>
     
   </header>
@@ -119,7 +134,7 @@ cd yourname. &hellip;">
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+<span class="byline author vcard">Posted by <span class="fn">shadowlaser</span></span>
 
       
 
@@ -157,6 +172,12 @@ cd yourname. &hellip;">
   </footer>
 </article>
 
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 </div>
 
 <aside class="sidebar">
@@ -188,7 +209,52 @@ cd yourname. &hellip;">
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/shadowlaser">@shadowlaser</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
+        github.showRepos({
+            user: 'shadowlaser',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/shadowlaser?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/shadowlaser">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/shadowlaser@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 
 
 
@@ -199,28 +265,30 @@ cd yourname. &hellip;">
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
+  Copyright &copy; 2014 - shadowlaser -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'shadowlaser';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke/';
+        var disqus_url = 'http://shadowlaser.github.io/blog/2013/09/14/shi-yong-octopressbu-shu-githubbo-ke/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
