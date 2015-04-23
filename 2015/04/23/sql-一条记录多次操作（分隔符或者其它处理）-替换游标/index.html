@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Shadowlaser</title>
+  <title>sql 一条记录多次操作（分隔符或者其它处理）--替换游标 | Shadowlaser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shadowlaser">
-<meta property="og:url" content="http://shadowlaser.github.io/archives/index.html">
+  <meta name="description" content="在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。123456789例子：表aFF字段-----------001,002,003-----------004,005-----------006
+通常我们遇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql 一条记录多次操作（分隔符或者其它处理）--替换游标">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/index.html">
 <meta property="og:site_name" content="Shadowlaser">
-<meta property="og:description" content="这是我的博客">
+<meta property="og:description" content="在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。123456789例子：表aFF字段-----------001,002,003-----------004,005-----------006
+通常我们遇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shadowlaser">
-<meta name="twitter:description" content="这是我的博客">
+<meta name="twitter:title" content="sql 一条记录多次操作（分隔符或者其它处理）--替换游标">
+<meta name="twitter:description" content="在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。123456789例子：表aFF字段-----------001,002,003-----------004,005-----------006
+通常我们遇">
   
     <link rel="alternative" href="/atom.xml" title="Shadowlaser" type="application/atom+xml">
   
@@ -92,210 +95,87 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/" class="archive-article-date">
-  <time datetime="2015-04-23T13:39:32.000Z" itemprop="datePublished">4月 23</time>
+        <section id="main"><article id="post-sql-一条记录多次操作（分隔符或者其它处理）-替换游标" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/" class="article-date">
+  <time datetime="2015-04-23T10:04:19.000Z" itemprop="datePublished">2015-04-23</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/">java语言中使用三元式的时候应该注意的问题</a>
+    <h1 class="article-title" itemprop="name">
+      sql 一条记录多次操作（分隔符或者其它处理）--替换游标
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/" class="archive-article-date">
-  <time datetime="2015-04-23T10:29:30.000Z" itemprop="datePublished">4月 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/">关于使用.net页面刷新时的问题下拉列表框值改变时，页面动态刷新</a>
-    </h1>
-  
+        <p>在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">表a</span><br><span class="line"><span class="header">FF字段</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">001,002,003</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">004,005</span><br><span class="line">-----------</span></span><br><span class="line">006</span><br></pre></td></tr></table></figure></p>
+<p>通常我们遇到没有办法替换游标的原因就是因为出现了上面类似的记录，一条记录需要进行单独处理。<br>这块解决方案，先是把上面的记录的内容改成多条，具体做法如下：</p>
+<ol>
+<li>建立两张张表a的临时表 a1，a2；其中a1，为a的复制表，a2表为空白表</li>
+<li>使用while循环判select top 1 ff from a1 where charindex(‘,’,ff)&gt;0 是否存在，如果存在执行如下操作：<ol>
+<li>insert into a2 select substring(ff,1,charindex(‘,’,ff)-1) from a1 where charindex(‘,’,ff)&gt;0  —-取得001插入第一条记录，取得004插入第二条</li>
+<li>update a1 set ff=substring(ff,charindex(‘,’,ff)+1,len(ff)-charindex(‘,’,ff)) where charindex(‘,’,ff)&gt;0 —去掉已经插入a2表的记录中的内容</li>
+<li>继续循环while判断<br>这样我们就得到了a1和a2表是已经完全被拆开ff字段的记录的记录了，可以像下面一样使用了<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a1</span><br><span class="line"><span class="built_in">union</span> <span class="built_in">all</span> </span><br><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a2</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>这样单条记录多次被操作不想使用游标的一种情况就得到了解决。<br>ps：大家需要注意，在临时表建立时，肯定不能有索引的存在的，其它的问题根据具体情况解决</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/linux-windows下命令行执行完程序后获取程序退出的返回值/" class="archive-article-date">
-  <time datetime="2015-04-23T10:27:49.000Z" itemprop="datePublished">4月 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/linux-windows下命令行执行完程序后获取程序退出的返回值/">linux windows下命令行执行完程序后获取程序退出的返回值</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/" class="archive-article-date">
-  <time datetime="2015-04-23T10:26:30.000Z" itemprop="datePublished">4月 23</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/" data-id="ci8u8jx0s000rbsmdu5ir7tks" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/">.net 中 GridViewRow使用字段名来访问数据，而不是使用索引</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" class="archive-article-date">
-  <time datetime="2015-04-23T10:25:28.000Z" itemprop="datePublished">4月 23</time>
-</a>
+        <a href="http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/#disqus_thread" class="article-comment-link">Comments</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/">jquery 插件tablepnp拖动刷新gridview问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" class="archive-article-date">
-  <time datetime="2015-04-23T10:23:39.000Z" itemprop="datePublished">4月 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/">关于文件的UTF-8的BOM标记问题记录</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/asp-net-mvc中获取非mvc页面的session值/" class="archive-article-date">
-  <time datetime="2015-04-23T10:22:39.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/asp-net-mvc中获取非mvc页面的session值/">asp.net mvc中获取非mvc页面的session值</a>
-    </h1>
+    <a href="/2015/04/23/转换字符串-站在巨人肩膀上思考/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          转换字符串--站在巨人肩膀上思考
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/04/23/net-中已经引用了dll-但是编译报错找不到类型或者命名空间/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">.net 中已经引用了dll,但是编译报错找不到类型或者命名空间</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/asp-ne中使用ajax和controller进行通信问题记录/" class="archive-article-date">
-  <time datetime="2015-04-23T10:20:44.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/asp-ne中使用ajax和controller进行通信问题记录/">asp.ne中使用ajax和controller进行通信问题记录</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/vs-2012-调试不了js-solution-中script-document显示不出来/" class="archive-article-date">
-  <time datetime="2015-04-23T10:19:26.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/vs-2012-调试不了js-solution-中script-document显示不出来/">vs 2012 调试不了js -- solution 中script document显示不出来</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/团队建设思考/" class="archive-article-date">
-  <time datetime="2015-04-23T10:12:56.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/团队建设思考/">团队建设思考</a>
-    </h1>
-  
 
-    </header>
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-</article>
-  
-  
-    </div></section>
-  
+</section>
+
 </section>
         
           <aside id="sidebar">
@@ -397,11 +277,13 @@ var _hmt = _hmt || [];
 <script>
   var disqus_shortname = 'shadowlaser';
   
+  var disqus_url = 'http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

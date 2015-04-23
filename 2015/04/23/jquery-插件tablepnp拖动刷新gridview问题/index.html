@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Shadowlaser</title>
+  <title>jquery 插件tablepnp拖动刷新gridview问题 | Shadowlaser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shadowlaser">
-<meta property="og:url" content="http://shadowlaser.github.io/archives/index.html">
+  <meta name="description" content="今天调查了一个gridview的行刷新的问题。
+使用了ajax进行行的移动操作，当然使用的是jquery的tablepnp插件，还有一个功能就是层级折叠问题，这个使用的viewstate保存的，于是出现了一个这么的问题：当gridview的行移动之后，然后点击与先前位置改变的带层级的行时，层级关联的几行确实被折叠了，但是，行有恢复了没有移动时的索引位置。
+经过半天的调查，在移动行时，发现ajax在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery 插件tablepnp拖动刷新gridview问题">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/index.html">
 <meta property="og:site_name" content="Shadowlaser">
-<meta property="og:description" content="这是我的博客">
+<meta property="og:description" content="今天调查了一个gridview的行刷新的问题。
+使用了ajax进行行的移动操作，当然使用的是jquery的tablepnp插件，还有一个功能就是层级折叠问题，这个使用的viewstate保存的，于是出现了一个这么的问题：当gridview的行移动之后，然后点击与先前位置改变的带层级的行时，层级关联的几行确实被折叠了，但是，行有恢复了没有移动时的索引位置。
+经过半天的调查，在移动行时，发现ajax在">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shadowlaser">
-<meta name="twitter:description" content="这是我的博客">
+<meta name="twitter:title" content="jquery 插件tablepnp拖动刷新gridview问题">
+<meta name="twitter:description" content="今天调查了一个gridview的行刷新的问题。
+使用了ajax进行行的移动操作，当然使用的是jquery的tablepnp插件，还有一个功能就是层级折叠问题，这个使用的viewstate保存的，于是出现了一个这么的问题：当gridview的行移动之后，然后点击与先前位置改变的带层级的行时，层级关联的几行确实被折叠了，但是，行有恢复了没有移动时的索引位置。
+经过半天的调查，在移动行时，发现ajax在">
   
     <link rel="alternative" href="/atom.xml" title="Shadowlaser" type="application/atom+xml">
   
@@ -92,210 +98,83 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/" class="archive-article-date">
-  <time datetime="2015-04-23T13:39:32.000Z" itemprop="datePublished">4月 23</time>
+        <section id="main"><article id="post-jquery-插件tablepnp拖动刷新gridview问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" class="article-date">
+  <time datetime="2015-04-23T10:25:28.000Z" itemprop="datePublished">2015-04-23</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/">java语言中使用三元式的时候应该注意的问题</a>
+    <h1 class="article-title" itemprop="name">
+      jquery 插件tablepnp拖动刷新gridview问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/" class="archive-article-date">
-  <time datetime="2015-04-23T10:29:30.000Z" itemprop="datePublished">4月 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/">关于使用.net页面刷新时的问题下拉列表框值改变时，页面动态刷新</a>
-    </h1>
-  
+        <p>今天调查了一个gridview的行刷新的问题。</p>
+<p>使用了ajax进行行的移动操作，当然使用的是jquery的tablepnp插件，还有一个功能就是层级折叠问题，这个使用的viewstate保存的，于是出现了一个这么的问题：<br>当gridview的行移动之后，然后点击与先前位置改变的带层级的行时，层级关联的几行确实被折叠了，但是，行有恢复了没有移动时的索引位置。</p>
+<p>经过半天的调查，在移动行时，发现ajax在请求页面的时候，页面保存的viewstate是没有值的，间接证明了ajax是请求一个完全的新页面，而后进行折叠或者展开，读取页面是可以读到之前的viewstate的，但是读取的行的索引（一个按钮的commandargument参数）是之前在刚一进页面的索引，所以ajax请求的页面和本页的状态都是没有关系的，且在行移动后，页面没有刷新绑定。</p>
+<p>结论：<br>ajax发送的请求页面和本页面刷新的页面状态是隔离的。</p>
+<p>找到问题，就好解决了，在ajax请求完成后，使用window.top.location.href=window.location.href从新请求一次页面就可以绑定新的索引值了。这个时候viewstate已经读取不到了，所以需要借用其它的方法。<br>例如session。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/linux-windows下命令行执行完程序后获取程序退出的返回值/" class="archive-article-date">
-  <time datetime="2015-04-23T10:27:49.000Z" itemprop="datePublished">4月 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/linux-windows下命令行执行完程序后获取程序退出的返回值/">linux windows下命令行执行完程序后获取程序退出的返回值</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/" class="archive-article-date">
-  <time datetime="2015-04-23T10:26:30.000Z" itemprop="datePublished">4月 23</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shadowlaser.github.io/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" data-id="ci8u8jx1f0013bsmdmjo6292r" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/">.net 中 GridViewRow使用字段名来访问数据，而不是使用索引</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" class="archive-article-date">
-  <time datetime="2015-04-23T10:25:28.000Z" itemprop="datePublished">4月 23</time>
-</a>
+        <a href="http://shadowlaser.github.io/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/#disqus_thread" class="article-comment-link">Comments</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/">jquery 插件tablepnp拖动刷新gridview问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" class="archive-article-date">
-  <time datetime="2015-04-23T10:23:39.000Z" itemprop="datePublished">4月 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/">关于文件的UTF-8的BOM标记问题记录</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/asp-net/">asp.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/asp-net-mvc中获取非mvc页面的session值/" class="archive-article-date">
-  <time datetime="2015-04-23T10:22:39.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/asp-net-mvc中获取非mvc页面的session值/">asp.net mvc中获取非mvc页面的session值</a>
-    </h1>
+    <a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          .net 中 GridViewRow使用字段名来访问数据，而不是使用索引
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于文件的UTF-8的BOM标记问题记录</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/asp-ne中使用ajax和controller进行通信问题记录/" class="archive-article-date">
-  <time datetime="2015-04-23T10:20:44.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/asp-ne中使用ajax和controller进行通信问题记录/">asp.ne中使用ajax和controller进行通信问题记录</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/vs-2012-调试不了js-solution-中script-document显示不出来/" class="archive-article-date">
-  <time datetime="2015-04-23T10:19:26.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/vs-2012-调试不了js-solution-中script-document显示不出来/">vs 2012 调试不了js -- solution 中script document显示不出来</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/23/团队建设思考/" class="archive-article-date">
-  <time datetime="2015-04-23T10:12:56.000Z" itemprop="datePublished">4月 23</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/23/团队建设思考/">团队建设思考</a>
-    </h1>
-  
 
-    </header>
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-</article>
-  
-  
-    </div></section>
-  
+</section>
+
 </section>
         
           <aside id="sidebar">
@@ -397,11 +276,13 @@ var _hmt = _hmt || [];
 <script>
   var disqus_shortname = 'shadowlaser';
   
+  var disqus_url = 'http://shadowlaser.github.io/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
