@@ -3,7 +3,7 @@ layout: post
 title: "挣扎后的安心"
 date: 2013-10-01 08:03
 comments: true
-categories: 
+categories: 生活
 ---
 ###人只有经历过痛苦、挫折，才能成长吗？追求自己的梦想，是会输给现实吗？       
  
@@ -16,7 +16,7 @@ categories:
 * 要学会感恩。  
 * 不攀比。   
 * 感兴趣的事情，那就要百分之二百的投入热情和精力。  
-
+<!-- more -->
 参考：    
 * [学会积极主动（上）](http://www.mifengtd.cn/articles/be-proactive-1.html)
 [学会积极主动（下）](http://www.mifengtd.cn/articles/be-proactive-2.html)   
