@@ -1,6 +1,6 @@
 title: "C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object"
 date: 2015-04-23 17:41:55
-categories: 
+categories: 技术
 tags: [asp.net, database, sql]
 ---
 

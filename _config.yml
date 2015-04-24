@@ -3,12 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Shadowlaser
-subtitle: 记录下生活
-description: 这是我的博客
+title: Shadowlaser' Blog
+subtitle: 用文字记录路上的所见所闻所感
+description: 用文字记录路上的所见所闻所感
 author: shadowlaser
+avatar: css/images/avatar.png
+follow: https://github.com/shadowlaser/
 language: zh-CN
-timezone: 
+timezone:
 simple_search: https://www.baidu.com/search
 
 # URL
@@ -62,8 +64,8 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
-## Themes: http://hexo.io/themes/
-theme: landscape
+## Themes: http://hexo.io/themes/landscape
+theme: jacman
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

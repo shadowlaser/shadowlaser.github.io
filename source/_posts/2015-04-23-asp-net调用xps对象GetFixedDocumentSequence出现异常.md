@@ -1,6 +1,6 @@
 title: "asp.net调用xps对象GetFixedDocumentSequence出现异常"
 date: 2015-04-23 17:51:22
-categories: 
+categories: 技术
 tags: [asp.net]
 ---
 
@@ -20,16 +20,16 @@ tags: [asp.net]
 <%@ Page Language="C#" AspCompat="true" %>
 ```
 经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:
- 
+
 ```
 //调用的地方
-System.Threading.Thread thread = 
+System.Threading.Thread thread =
                new System.Threading.Thread(
                new System.Threading.ParameterizedThreadStart(ThreadMethod));
             thread.Start(value);
             thread.Join();//等待结束
 //线程函数
- 
+
 private void ThreadMethod(object parameter)
 {
     //这里写的就是对xps处理的代码

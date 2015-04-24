@@ -1,6 +1,6 @@
 title: "asp.net 发布时出现了Object reference not set to an instance of an object错误"
 date: 2015-04-23 17:36:19
-categories: 
+categories: 技术
 tags: [asp.net, 待解决]
 ---
 
