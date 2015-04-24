@@ -3,7 +3,7 @@ layout: post
 title: "工作变动和一些记录"
 date: 2013-09-28 09:16
 comments: true
-categories: 
+categories: 生活
 ---
 
 ###最近发生了一件令自己烦恼的事：自己提出了辞职，以及的结果。
