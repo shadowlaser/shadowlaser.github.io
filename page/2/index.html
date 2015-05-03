@@ -78,6 +78,68 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" title="关于文件的UTF-8的BOM标记问题记录" itemprop="url">关于文件的UTF-8的BOM标记问题记录</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T10:23:39.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>在svn上提交了一个文件trac进行codereview 的时候，发现其中的中文是乱码，猜测是文件编码的问题，用emedit查看之后，发现这个文件的编码时utf-8 （无bom）格式，然后对比了一下其它显示正确的文件格式：utf-8（含bom），问题就是bom有无的问题，使用emedit保存完后，调查了一下这个bom是什么.</p>
+<p>“UTF- 8编码的文件中，BOM占三个字节。如果用记事本把一个文本文件另存为UTF-8编码方式的话，用UE打开这个文件，切换到十六进制编辑状态就可以看到开 头的FFFE了。这是个标识UTF-8编码文件的好办法，软件通过BOM来识别这个文件是否是UTF-8编码，很多软件还要求读入的文件必须带BOM。可 是，还是有很多软件不能识别BOM。”</p>
+<p>“UTF-8 BOM又叫UTF-8 签名,其实UTF-8的BOM对UFT-8没有作用,是为了支援UTF-16,UTF-32才加上”</p>
+<p>才发现这个bom在utf-8格式的文件中代表了头三个字节“EF BB BF”，很多文件就没有这个概念，经常会被当做数据进行处理。php好像暂时不支持，不能处理带bom的utf-8文件。</p>
+<p>所以说，数据文件最好不要带bom，当然你如果知道bom，处理程序中做了处理那就是另一说了。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/23/asp-net-mvc中获取非mvc页面的session值/" title="asp.net mvc中获取非mvc页面的session值" itemprop="url">asp.net mvc中获取非mvc页面的session值</a>
   </h1>
   <p class="article-author">By
@@ -696,74 +758,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/C-查询数据库时问题-Min-1-must-be-less-than-or-equal-to-max-1-in-Range-object/" title="C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object" itemprop="url">C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T09:41:55.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>这个问题是由于自己的粗心引起,当时定位到代码了,但是完全没有头绪,知道自己在实现上找到了问题.<br>    下面就是出错的代码:<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataRow[] tmpdrlist = tmpdt.<span class="keyword">Select</span>(string.<span class="keyword">Format</span>(<span class="string">"UserGroup = &#123;0&#125;"</span> ,dr[<span class="string">"UserGroup"</span>].<span class="keyword">ToString</span>()));</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码没有任何语法问题,只有在运行的时候出现了问题,当时百思不得其解,最后从业务实现上找到了,数据库字段UserGroup是字符串,就是这个原因,修改之后代码如下:<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataRow[] tmpdrlist = tmpdt.<span class="keyword">Select</span>(string.<span class="keyword">Format</span>(<span class="string">"UserGroup = '&#123;0&#125;'"</span> ,dr[<span class="string">"UserGroup"</span>].<span class="keyword">ToString</span>()));</span><br></pre></td></tr></table></figure></p>
-<p>就是这个单引号的问题,这种问题真是令人无语.</p>
-<p>总结:</p>
-<pre><code><span class="bullet">1. </span>如果编译时不报错,但是运行时报错,那么一般就是业务实现不正确或者其它的特性,所以这个时候你需要做的是检查业务和逻辑实现,而不是语法错误.
-<span class="bullet">2. </span>怎么提高这种细节处理是一个比较重要的问题,这个有点浪费时间.
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/asp-net/">asp.net</a><a href="/tags/database/">database</a><a href="/tags/sql/">sql</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/C-查询数据库时问题-Min-1-must-be-less-than-or-equal-to-max-1-in-Range-object/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -786,7 +780,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>6</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>7</sup></a></li>
 		  
 		
 		</ul>
@@ -823,6 +817,14 @@
 			
 		
 			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/人生哲学/" title="人生哲学">人生哲学<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/方法/" title="方法">方法<sup>1</sup></a></li>
 			
 		
@@ -831,11 +833,7 @@
 			
 		
 			
-				<li><a href="/tags/人生哲学/" title="人生哲学">人生哲学<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+				<li><a href="/tags/杂/" title="杂">杂<sup>1</sup></a></li>
 			
 		
 			
