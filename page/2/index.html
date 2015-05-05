@@ -78,6 +78,73 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/" title=".net 中 GridViewRow使用字段名来访问数据，而不是使用索引" itemprop="url">.net 中 GridViewRow使用字段名来访问数据，而不是使用索引</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T10:26:30.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>在行绑定事件中，项目中很多的字段都对某些字段进行处理，而且这个函数写的挺长，上次就是因为加新功能，多替换了几个以所以为标记进行操作的代码，导致了一个很严重的bug。</p>
+<p>数字索引真的不明显，容易搞错，于是开始思考有什么好的办法，来避免使用数字索引，微软的东西应该自带了，终于让我找到了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">DataView</span> dv = e.row.dataitem <span class="keyword">as</span> <span class="built_in">DataView</span>;</span><br><span class="line">dv[<span class="string">"字段1"</span>] = <span class="string">"字段1的值"</span>;<span class="comment">//赋值</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码可读性瞬间上升，比e.row.cells[1]的写法好多了。<br>虽然上面的代码可以获取值和设置值，但是上面的代码不能获取gridview中的控件。</p>
+<h2 id="思考：">思考：</h2><pre><code>怎么在不使用数字索引的情况下，获取gridview绑定的控件。（e<span class="class">.row</span><span class="class">.cells</span>[<span class="number">1</span>]<span class="class">.findcontrols</span>[<span class="string">"控件1"</span>]，怎么去掉索引<span class="number">1</span>？）
+</code></pre><p> 使用e.row.findcontrols[“控件1”]就可以了</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" title="jquery 插件tablepnp拖动刷新gridview问题" itemprop="url">jquery 插件tablepnp拖动刷新gridview问题</a>
   </h1>
   <p class="article-author">By
@@ -690,77 +757,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" title="asp.net调用xps对象GetFixedDocumentSequence出现异常" itemprop="url">asp.net调用xps对象GetFixedDocumentSequence出现异常</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T09:51:22.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>昨天在web端调用别人写的word处理dll时，出现了如下错误:</p>
-<p><code>The invocation of the constructor on type &#39;System.Windows.Documents.DocumentReference&#39; that matches the specified binding constraints threw an exception.&#39; Line number &#39;2&#39; and line position &#39;21&#39;.</code></p>
-<p>于是写了一个cs端程序进行问题确认，测试程序可以正常执行，这块可以排除代码逻辑的问题，有可能是环境或者其它方面考虑不足。</p>
-<p>同事指出可以查看详细的异常信息：在抛出异常的地方找到的innerexception是sta的问题，这个具体没有把信息保留下来.<br>根据innerexception的提示，发现了xps对象和其中的方法是STA的，但是aspx页面是MTA，经过几番周折找到遇到一样问题的人，链接如下:</p>
-<p><a href="http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net" target="_blank" rel="external">http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net</a></p>
-<p>问题真的是一样的，然后按照里面提供的链接(第二个)添加<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="variable">%@</span> Page Language=<span class="string">"C#"</span> AspCompat=<span class="string">"true"</span> <span class="variable">%&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用的地方</span></span><br><span class="line">System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span> <span class="keyword">thread</span> <span class="subst">=</span></span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span>(</span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span>ParameterizedThreadStart(ThreadMethod));</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span>Start(value);</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span><span class="keyword">Join</span>();<span class="comment">//等待结束</span></span><br><span class="line"><span class="comment">//线程函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="literal">void</span> ThreadMethod(object parameter)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//这里写的就是对xps处理的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结:">总结:</h1><pre><code><span class="bullet">1. </span>STA、MTA的概念需要熟悉，其它的线程，线程同步，线程池等概念需要再巩固一下了。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/asp-net/">asp.net</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -779,7 +775,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/技术/" title="技术">技术<sup>16</sup></a></li>
+			<li><a href="/categories/技术/" title="技术">技术<sup>17</sup></a></li>
 		  
 		
 		  
@@ -812,15 +808,11 @@
 			
 		
 			
+				<li><a href="/tags/待解决/" title="待解决">待解决<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/团队建设/" title="团队建设">团队建设<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
 			
 		
 			
@@ -832,11 +824,27 @@
 			
 		
 			
+				<li><a href="/tags/EF/" title="EF">EF<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/团队建设/" title="团队建设">团队建设<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Hololens/" title="Hololens">Hololens<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/杂/" title="杂">杂<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/c/" title="c#">c#<sup>1</sup></a></li>
 			
 		
 			
@@ -848,7 +856,7 @@
 			
 		
 			
-				<li><a href="/tags/待解决/" title="待解决">待解决<sup>1</sup></a></li>
+				<li><a href="/tags/net/" title=".net">.net<sup>1</sup></a></li>
 			
 		
 		</ul>
