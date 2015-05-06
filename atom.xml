@@ -4,7 +4,7 @@
   <subtitle><![CDATA[一个.net软件工程师，之前做过其它的事，以后还是努力的奔跑]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shadowlaser.github.io/"/>
-  <updated>2015-05-05T14:23:51.485Z</updated>
+  <updated>2015-05-06T14:38:12.065Z</updated>
   <id>http://shadowlaser.github.io/</id>
   
   <author>
@@ -13,6 +13,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[tf 一些问题整理]]></title>
+    <link href="http://shadowlaser.github.io/2015/05/06/tf-%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/"/>
+    <id>http://shadowlaser.github.io/2015/05/06/tf-一些问题整理/</id>
+    <published>2015-05-06T13:56:08.000Z</published>
+    <updated>2015-05-06T14:38:12.065Z</updated>
+    <content type="html"><![CDATA[<pre><code>之前团队中使用tfs进行版本和其它的管理，由于自己的电脑是被人用的，例如改名什么的，按照自己的习惯重新配置了不可避免，所以记录了一下遇到的问题
+</code></pre><a id="more"></a>
+<p>我使用的是离职的同事的电脑，重新配置环境又是很麻烦的事情，但是还是需要自己按照自己的习惯进行重新配置。</p>
+<h2 id="TFS的工作区问题">TFS的工作区问题</h2><p>之前tfs使用的上一个人的用户名，所以自己在server上建立了一个自己的账户，并删除了之前的账户，这引起了工作区找不到的问题。</p>
+<p>这个问题到时解决的很简单，自己从新在本机的其它目录把内容再签出一遍就可以了，当然是用的是我的用户名链接的tfs服务器，签出时见了一个新的工作区。</p>
+<p>之后自己觉得自己的电脑名真是不好记忆就改了名字，嗯，不错，又出问题了。</p>
+<p>改名字后，重启电脑之前新的账户签出的工作区又不能使用了，在vs2012 启动的时候就提示工作区 “pc<em>*</em>;成金”不可用，这块很疑惑，pc名出问题还罢了，怎么用户名都改了很长时间了还在？这个人的内容我早都干掉了啊？如果这样考虑的话，那么就是之前这个人建立的一个东西，这样的话，只有工作区可以说的通了,网上查了查，说要使用如下的命令来更新一下命名过电脑的工作区：</p>
+<pre><code>&gt;tf workspaces <span class="regexp">/updateComputerName:[oldcomputername] /</span><span class="string">collection:</span><span class="string">http:</span><span class="comment">//xx.xx.xx.xx/tfs/product</span>
+</code></pre><p>上面的[oldcomputername]是改之前的电脑名字，这个在启动本地连接tfs时，提示出错的名字，这个名字当时没记住才改的，只能靠提示出错来抄录了；上面的命令最终还是没有解决，虽然更新成功了，但是连接还是出错，这个可能不是这块的问题了，自己刚好查看了tf命令行关于<code>workspaces</code>参数，发现了<code>remove</code>于是想着，现在还是不能理解一些概念，直接清空现在的配置重新开始，于是我干下面的操作：</p>
+<pre><code>&gt;tf workspaces /<span class="keyword">remove</span>:*
+</code></pre><p>执行了之后，发现命令删除了两个工作区，一个是之前的一个人，另一个是我的工作区，但是我的工作区的电脑名字却是新的（上面更新了一次），这个完全就不知道了，因为添加工作区的时候提示已经存在工作区，但是工作区列表显示不出来。别人的那个工作区就是旧的pc名和用户名组成的工作区名。<br><img src="/pics/tfs_remove_workspaces.jpeg" alt="命令行截图"></p>
+<h3 id="总结">总结</h3><p>至此，问题终于变成可控了，从新建立工作区，签出代码，一切都美好了。</p>
+<h2 id="TFS管理的工程去掉版本信息">TFS管理的工程去掉版本信息</h2><p>由于tfs与微软的产品关联很大、不够轻量级、且使用的时候需要打开vs这个大家伙，所以把版本管理换成了svn，使用了visualsvn做的服务器，真是非常简单，总共从安装到上手没有半个小时，tfs学习后不能通用，且配置复杂，我陪了一次用户添加，没有头绪，之后再没有关注这个东西，虽然tfs平台挺好，但是不可控因素太多了。</p>
+<p>tfs进行控制使用了两个方面的内容进行控制对项目工程：</p>
+<pre><code><span class="bullet">1. </span>单独tfs控制文件。
+<span class="bullet">2. </span>文件内的控制信息：sln文件内控制信息、proj文件中控制信息。
+</code></pre><p>下面就进行怎么清楚：</p>
+<pre><code><span class="bullet">1. </span>单独项目文件直接干掉，例如：.vssscc文件（还有其他的文件）
+<span class="bullet">2. </span>.sln文件中需要删除手动删除或者注释掉GlobalSection(TeamFoundationVersionControl) 节点
+<span class="bullet">3. </span>.csproj文件中需要把聚集在一块的<span class="xml"><span class="tag">&lt;<span class="title">SCC</span>&gt;</span></span>节点都删除或者注释掉
+</code></pre><p>以上问题解决之后，vs就不会提示你tfs的错误了，如果删除文件内的内容不能生效的话，你需要重启一下vs，当时就有一个proj文件的不能载入问题被这样解决了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<pre><code>之前团队中使用tfs进行版本和其它的管理，由于自己的电脑是被人用的，例如改名什么的，按照自己的习惯重新配置了不可避免，所以记录了一下遇到的问题
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="vs" scheme="http://shadowlaser.github.io/tags/vs/"/>
+    
+      <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Entity FrameWork不能正确生成对象：ErrorGenerateOutput]]></title>
@@ -635,33 +675,6 @@
       <category term="database" scheme="http://shadowlaser.github.io/tags/database/"/>
     
       <category term="sql" scheme="http://shadowlaser.github.io/tags/sql/"/>
-    
-      <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[.net 中已经引用了dll,但是编译报错找不到类型或者命名空间]]></title>
-    <link href="http://shadowlaser.github.io/2015/04/23/net-%E4%B8%AD%E5%B7%B2%E7%BB%8F%E5%BC%95%E7%94%A8%E4%BA%86dll-%E4%BD%86%E6%98%AF%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99%E6%89%BE%E4%B8%8D%E5%88%B0%E7%B1%BB%E5%9E%8B%E6%88%96%E8%80%85%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"/>
-    <id>http://shadowlaser.github.io/2015/04/23/net-中已经引用了dll-但是编译报错找不到类型或者命名空间/</id>
-    <published>2015-04-23T10:02:26.000Z</published>
-    <updated>2015-04-23T15:14:47.680Z</updated>
-    <content type="html"><![CDATA[<p>今天合项目中代码,需要把别人做的dll引入到项目(年纪很大了),但是一直报找不到命名空间或者类型的错误,根本没有办法走下去.</p>
-<ol>
-<li>猜测有什么地方自己不了解,让别人帮忙解决,最终这个问题超出了我们理解的范畴失败而告终.</li>
-<li>猜测是我的vs出现问题,于是换别人的电脑还是一样的报错,这下可以排除非正常因素了.</li>
-<li>请别人来帮助时,正在都束手无策时,自己突然想到最近看.net 版本的东西,赶紧验证,发现自己调用程序是运行在2.0上的,dll是我才编译4.0的,都修改成了4.0后,引入命名空间,搞定.</li>
-</ol>
-<h1 id="总结:">总结:</h1><pre><code><span class="class">.net</span> framework版本的特性还是不清楚,需要再研究研究.
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天合项目中代码,需要把别人做的dll引入到项目(年纪很大了),但是一直报找不到命名空间或者类型的错误,根本没有办法走下去.</p>
-<ol>
-<li>猜测有什么地方自己不了解,让别人帮忙解决,最终这个问题超出了我们理解的范畴失败而告终.</li>
-<li>猜测是我的vs出]]>
-    </summary>
-    
-      <category term="asp.net" scheme="http://shadowlaser.github.io/tags/asp-net/"/>
     
       <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     

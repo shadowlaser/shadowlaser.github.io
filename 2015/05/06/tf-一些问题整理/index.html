@@ -4,40 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>正确使用工具 | Shadowlaser&#39; Blog</title>
+    <title>tf 一些问题整理 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="工具的正确使用方法首先你要确定你是要干什么.
-
-我要解决什么问题
-解决这些问题有哪些方法
-
-千万不能让工具奴役了你，为了学习工具而学习工具，这样反而落了下乘。
-思想上被禁锢住了，视野变窄，成就也有限。">
+    <meta name="description" content="之前团队中使用tfs进行版本和其它的管理，由于自己的电脑是被人用的，例如改名什么的，按照自己的习惯重新配置了不可避免，所以记录了一下遇到的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正确使用工具">
-<meta property="og:url" content="http://shadowlaser.github.io/2013/10/17/zheng-que-shi-yong-gong-ju/index.html">
+<meta property="og:title" content="tf 一些问题整理">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/05/06/tf-一些问题整理/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="工具的正确使用方法首先你要确定你是要干什么.
-
-我要解决什么问题
-解决这些问题有哪些方法
-
-千万不能让工具奴役了你，为了学习工具而学习工具，这样反而落了下乘。
-思想上被禁锢住了，视野变窄，成就也有限。">
+<meta property="og:description" content="之前团队中使用tfs进行版本和其它的管理，由于自己的电脑是被人用的，例如改名什么的，按照自己的习惯重新配置了不可避免，所以记录了一下遇到的问题">
+<meta property="og:image" content="/pics/tfs_remove_workspaces.jpeg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正确使用工具">
-<meta name="twitter:description" content="工具的正确使用方法首先你要确定你是要干什么.
-
-我要解决什么问题
-解决这些问题有哪些方法
-
-千万不能让工具奴役了你，为了学习工具而学习工具，这样反而落了下乘。
-思想上被禁锢住了，视野变窄，成就也有限。">
+<meta name="twitter:title" content="tf 一些问题整理">
+<meta name="twitter:description" content="之前团队中使用tfs进行版本和其它的管理，由于自己的电脑是被人用的，例如改名什么的，按照自己的习惯重新配置了不可避免，所以记录了一下遇到的问题">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -94,14 +77,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/10/17/zheng-que-shi-yong-gong-ju/" title="正确使用工具" itemprop="url">正确使用工具</a>
+      <a href="/2015/05/06/tf-一些问题整理/" title="tf 一些问题整理" itemprop="url">tf 一些问题整理</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2013-10-17T12:42:00.000Z" itemprop="datePublished"> 发表于 2013-10-17</time>
+    <time datetime="2015-05-06T13:56:08.000Z" itemprop="datePublished"> 发表于 2015-05-06</time>
     
   </p>
 </header>
@@ -110,22 +93,46 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具的正确使用方法"><span class="toc-number">1.</span> <span class="toc-text">工具的正确使用方法</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TFS的工作区问题"><span class="toc-number">1.</span> <span class="toc-text">TFS的工作区问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">1.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TFS管理的工程去掉版本信息"><span class="toc-number">2.</span> <span class="toc-text">TFS管理的工程去掉版本信息</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="工具的正确使用方法">工具的正确使用方法</h2><p>首先你要确定你是要干什么.</p>
-<ul>
-<li>我要解决什么问题</li>
-<li>解决这些问题有哪些方法</li>
-</ul>
-<p>千万不能让工具奴役了你，为了学习工具而学习工具，这样反而落了下乘。</p>
-<p>思想上被禁锢住了，视野变窄，成就也有限。</p>
+		<pre><code>之前团队中使用tfs进行版本和其它的管理，由于自己的电脑是被人用的，例如改名什么的，按照自己的习惯重新配置了不可避免，所以记录了一下遇到的问题
+</code></pre><a id="more"></a>
+<p>我使用的是离职的同事的电脑，重新配置环境又是很麻烦的事情，但是还是需要自己按照自己的习惯进行重新配置。</p>
+<h2 id="TFS的工作区问题">TFS的工作区问题</h2><p>之前tfs使用的上一个人的用户名，所以自己在server上建立了一个自己的账户，并删除了之前的账户，这引起了工作区找不到的问题。</p>
+<p>这个问题到时解决的很简单，自己从新在本机的其它目录把内容再签出一遍就可以了，当然是用的是我的用户名链接的tfs服务器，签出时见了一个新的工作区。</p>
+<p>之后自己觉得自己的电脑名真是不好记忆就改了名字，嗯，不错，又出问题了。</p>
+<p>改名字后，重启电脑之前新的账户签出的工作区又不能使用了，在vs2012 启动的时候就提示工作区 “pc<em>*</em>;成金”不可用，这块很疑惑，pc名出问题还罢了，怎么用户名都改了很长时间了还在？这个人的内容我早都干掉了啊？如果这样考虑的话，那么就是之前这个人建立的一个东西，这样的话，只有工作区可以说的通了,网上查了查，说要使用如下的命令来更新一下命名过电脑的工作区：</p>
+<pre><code>&gt;tf workspaces <span class="regexp">/updateComputerName:[oldcomputername] /</span><span class="string">collection:</span><span class="string">http:</span><span class="comment">//xx.xx.xx.xx/tfs/product</span>
+</code></pre><p>上面的[oldcomputername]是改之前的电脑名字，这个在启动本地连接tfs时，提示出错的名字，这个名字当时没记住才改的，只能靠提示出错来抄录了；上面的命令最终还是没有解决，虽然更新成功了，但是连接还是出错，这个可能不是这块的问题了，自己刚好查看了tf命令行关于<code>workspaces</code>参数，发现了<code>remove</code>于是想着，现在还是不能理解一些概念，直接清空现在的配置重新开始，于是我干下面的操作：</p>
+<pre><code>&gt;tf workspaces /<span class="keyword">remove</span>:*
+</code></pre><p>执行了之后，发现命令删除了两个工作区，一个是之前的一个人，另一个是我的工作区，但是我的工作区的电脑名字却是新的（上面更新了一次），这个完全就不知道了，因为添加工作区的时候提示已经存在工作区，但是工作区列表显示不出来。别人的那个工作区就是旧的pc名和用户名组成的工作区名。<br><img src="/pics/tfs_remove_workspaces.jpeg" alt="命令行截图"></p>
+<h3 id="总结">总结</h3><p>至此，问题终于变成可控了，从新建立工作区，签出代码，一切都美好了。</p>
+<h2 id="TFS管理的工程去掉版本信息">TFS管理的工程去掉版本信息</h2><p>由于tfs与微软的产品关联很大、不够轻量级、且使用的时候需要打开vs这个大家伙，所以把版本管理换成了svn，使用了visualsvn做的服务器，真是非常简单，总共从安装到上手没有半个小时，tfs学习后不能通用，且配置复杂，我陪了一次用户添加，没有头绪，之后再没有关注这个东西，虽然tfs平台挺好，但是不可控因素太多了。</p>
+<p>tfs进行控制使用了两个方面的内容进行控制对项目工程：</p>
+<pre><code><span class="bullet">1. </span>单独tfs控制文件。
+<span class="bullet">2. </span>文件内的控制信息：sln文件内控制信息、proj文件中控制信息。
+</code></pre><p>下面就进行怎么清楚：</p>
+<pre><code><span class="bullet">1. </span>单独项目文件直接干掉，例如：.vssscc文件（还有其他的文件）
+<span class="bullet">2. </span>.sln文件中需要删除手动删除或者注释掉GlobalSection(TeamFoundationVersionControl) 节点
+<span class="bullet">3. </span>.csproj文件中需要把聚集在一块的<span class="xml"><span class="tag">&lt;<span class="title">SCC</span>&gt;</span></span>节点都删除或者注释掉
+</code></pre><p>以上问题解决之后，vs就不会提示你tfs的错误了，如果删除文件内的内容不能生效的话，你需要重启一下vs，当时就有一个proj文件的不能载入问题被这样解决了。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/vs/">vs</a>
+  </div>
 
 </div>
 
@@ -133,7 +140,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2013/10/17/zheng-que-shi-yong-gong-ju/" data-title="正确使用工具 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/05/06/tf-一些问题整理/" data-title="tf 一些问题整理 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -146,19 +153,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/vs-2012不能发布web程序的问题/" title="vs 2012不能发布web程序的问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  vs 2012不能发布web程序的问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2013/10/04/wei-cheng-xing-de-da-si/"  title="未成行的大寺">
+<a href="/2015/05/05/Entity-FrameWork不能正确生成对象：ErrorGenerateOutput/"  title="Entity FrameWork不能正确生成对象：ErrorGenerateOutput">
  <strong>下一篇：</strong><br/> 
- <span>未成行的大寺
+ <span>Entity FrameWork不能正确生成对象：ErrorGenerateOutput
 </span>
 </a>
 </div>
@@ -179,7 +178,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具的正确使用方法"><span class="toc-number">1.</span> <span class="toc-text">工具的正确使用方法</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TFS的工作区问题"><span class="toc-number">1.</span> <span class="toc-text">TFS的工作区问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">1.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TFS管理的工程去掉版本信息"><span class="toc-number">2.</span> <span class="toc-text">TFS管理的工程去掉版本信息</span></a></li></ol>
  
   </div>
 
@@ -193,7 +192,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/技术/" title="技术">技术<sup>17</sup></a></li>
+			<li><a href="/categories/技术/" title="技术">技术<sup>18</sup></a></li>
 		  
 		
 		  
@@ -218,6 +217,10 @@
 			
 		
 			
+				<li><a href="/tags/待解决/" title="待解决">待解决<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/js/" title="js">js<sup>2</sup></a></li>
 			
 		
@@ -226,15 +229,15 @@
 			
 		
 			
-				<li><a href="/tags/待解决/" title="待解决">待解决<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/人生哲学/" title="人生哲学">人生哲学<sup>1</sup></a></li>
+				<li><a href="/tags/Hololens/" title="Hololens">Hololens<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/EF/" title="EF">EF<sup>1</sup></a></li>
 			
 		
 			
@@ -242,7 +245,11 @@
 			
 		
 			
-				<li><a href="/tags/EF/" title="EF">EF<sup>1</sup></a></li>
+				<li><a href="/tags/net/" title=".net">.net<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/c/" title="c#">c#<sup>1</sup></a></li>
 			
 		
 			
@@ -254,7 +261,7 @@
 			
 		
 			
-				<li><a href="/tags/Hololens/" title="Hololens">Hololens<sup>1</sup></a></li>
+				<li><a href="/tags/vs/" title="vs">vs<sup>1</sup></a></li>
 			
 		
 			
@@ -262,7 +269,7 @@
 			
 		
 			
-				<li><a href="/tags/c/" title="c#">c#<sup>1</sup></a></li>
+				<li><a href="/tags/人生哲学/" title="人生哲学">人生哲学<sup>1</sup></a></li>
 			
 		
 			
@@ -271,10 +278,6 @@
 		
 			
 				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/net/" title=".net">.net<sup>1</sup></a></li>
 			
 		
 		</ul>
