@@ -3,7 +3,7 @@ layout: post
 title: "未成行的大寺"
 date: 2013-10-04 15:47
 comments: true
-categories: 
+categories:
 tags: [思考]
 ---
 
@@ -44,5 +44,3 @@ tags: [思考]
 附上一张：
 
 ![大寺](/pics/2013-10-04-01.JPG)
-
-
