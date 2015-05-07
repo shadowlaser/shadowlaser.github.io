@@ -4,25 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>asp.net调用xps对象GetFixedDocumentSequence出现异常 | Shadowlaser&#39; Blog</title>
+    <title>万丈高楼地基重要 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+    <meta name="description" content="今天在网上又读了一次采访左耳朵耗子的文章，还是感慨了一下，正好解惑自己最近一段时间的问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="asp.net调用xps对象GetFixedDocumentSequence出现异常">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/index.html">
+<meta property="og:title" content="万丈高楼地基重要">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/05/07/万丈高楼地基重要/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+<meta property="og:description" content="今天在网上又读了一次采访左耳朵耗子的文章，还是感慨了一下，正好解惑自己最近一段时间的问题。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="asp.net调用xps对象GetFixedDocumentSequence出现异常">
-<meta name="twitter:description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+<meta name="twitter:title" content="万丈高楼地基重要">
+<meta name="twitter:description" content="今天在网上又读了一次采访左耳朵耗子的文章，还是感慨了一下，正好解惑自己最近一段时间的问题。">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -79,14 +76,14 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" title="asp.net调用xps对象GetFixedDocumentSequence出现异常" itemprop="url">asp.net调用xps对象GetFixedDocumentSequence出现异常</a>
+      <a href="/2015/05/07/万丈高楼地基重要/" title="万丈高楼地基重要" itemprop="url">万丈高楼地基重要</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T09:51:22.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-05-07T13:38:19.000Z" itemprop="datePublished"> 发表于 2015-05-07</time>
     
   </p>
 </header>
@@ -95,33 +92,35 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结:"><span class="toc-number">1.</span> <span class="toc-text">总结:</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#it中不变的东西"><span class="toc-number">1.</span> <span class="toc-text">it中不变的东西</span></a></li></ol>
 		
 		</div>
 		
-		<p>昨天在web端调用别人写的word处理dll时，出现了如下错误:</p>
-<p><code>The invocation of the constructor on type &#39;System.Windows.Documents.DocumentReference&#39; that matches the specified binding constraints threw an exception.&#39; Line number &#39;2&#39; and line position &#39;21&#39;.</code></p>
-<p>于是写了一个cs端程序进行问题确认，测试程序可以正常执行，这块可以排除代码逻辑的问题，有可能是环境或者其它方面考虑不足。</p>
-<p>同事指出可以查看详细的异常信息：在抛出异常的地方找到的innerexception是sta的问题，这个具体没有把信息保留下来.<br>根据innerexception的提示，发现了xps对象和其中的方法是STA的，但是aspx页面是MTA，经过几番周折找到遇到一样问题的人，链接如下:</p>
-<p><a href="http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net" target="_blank" rel="external">http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net</a></p>
-<p>问题真的是一样的，然后按照里面提供的链接(第二个)添加<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="variable">%@</span> Page Language=<span class="string">"C#"</span> AspCompat=<span class="string">"true"</span> <span class="variable">%&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用的地方</span></span><br><span class="line">System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span> <span class="keyword">thread</span> <span class="subst">=</span></span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span>(</span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span>ParameterizedThreadStart(ThreadMethod));</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span>Start(value);</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span><span class="keyword">Join</span>();<span class="comment">//等待结束</span></span><br><span class="line"><span class="comment">//线程函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="literal">void</span> ThreadMethod(object parameter)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//这里写的就是对xps处理的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结:">总结:</h1><pre><code><span class="bullet">1. </span>STA、MTA的概念需要熟悉，其它的线程，线程同步，线程池等概念需要再巩固一下了。
-</code></pre>  
+		<p>今天在网上又读了一次采访左耳朵耗子的文章，还是感慨了一下，正好解惑自己最近一段时间的问题。<br><a id="more"></a><br>学习各种眼花缭乱的语言、工具都不如基础知识的重要性，就像武侠小说的内功一样，普通的招式在内功深厚的人手里，照样能厉害百倍，最后的就是无形，招式已经不重要了，非常像it中的各类语言，语法什么真能花很长时间学习吗？基础扎实的人，很短时间也能学会，毕竟根本性的东西都是没有变化的，只是适用于语言的方式变现出来而已，本质的东西是不变的。</p>
+<h2 id="it中不变的东西">it中不变的东西</h2><ol>
+<li>计算机硬件。<br> 现在还是采用的冯诺依曼的体系结构，材料变了，实现方式变了，但是还是老几样，所以学习还算相当一段时间不会变的，虽然量子计算机已经有这概念了，能正式使用那还是需要有相当一段路要走的。</li>
+<li>网络协议<br> 网络就是通信，这些传输介质可能发生变化，但是那些成熟的网络协议是不会改变的，毕竟现在的计算机网络都是需要靠这些协议相互通信的，暂时不会出现变更，要替换现有的网络协议真的成本太高了，过度时期必然不断，就像32位cpu到64位cpu过度一样。</li>
+<li>操作系统<br> 现在的几种类型的OS已经非常成熟且庞大了，现在的每年的微软或者linux的系统都是在原有的概念上使用更好的方式或者增加或者减少，但是主要功能都没有变，这个好像说起来有点勉强，不过在用户使用的过程中真的是这样的。</li>
+<li>算法、数据结构<br> 算法和数据结构是脱离语言的，所以它具有广泛的通用性，毕竟这个基础真的能看到非常大的好处，代码效率、简洁上都非常不错，真的是一个比较厉害的分水岭，数据库数据检索、最短路径等等这些都是算法支撑的，</li>
+<li>其它<br> 数学、物理等等以前学习的纯理论的东西都是不变的，毕竟现在科技基础就是这些。</li>
+</ol>
+<p>之前自己着相了，学这门好还是学习那门语言好，最后发现自己背离了初衷，语言是为了实现某些东西的，它是一个辅助性的工具而已，最重要的还是你的思想。</p>
+<p>基础这些东西，如果没有打牢靠，高楼肯定建不高的，必然需要重新回过头来学习，所以趁早打牢靠。</p>
+<p>修炼好深厚的内功，成为绝世高手指日可待了，什么招式不要被这些带偏了。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/思考/">思考</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  <span></span> <a href="/tags/路上/">路上</a>
   </div>
 
 </div>
@@ -130,7 +129,7 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" data-title="asp.net调用xps对象GetFixedDocumentSequence出现异常 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/05/07/万丈高楼地基重要/" data-title="万丈高楼地基重要 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -143,19 +142,11 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/net-中已经引用了dll-但是编译报错找不到类型或者命名空间/" title=".net 中已经引用了dll,但是编译报错找不到类型或者命名空间">
-  <strong>上一篇：</strong><br/>
-  <span>
-  .net 中已经引用了dll,但是编译报错找不到类型或者命名空间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/执行力有多重要/"  title="执行力有多重要">
+<a href="/2015/05/06/tf-一些问题整理/"  title="tf 一些问题整理">
  <strong>下一篇：</strong><br/> 
- <span>执行力有多重要
+ <span>tf 一些问题整理
 </span>
 </a>
 </div>
@@ -176,7 +167,7 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结:"><span class="toc-number">1.</span> <span class="toc-text">总结:</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#it中不变的东西"><span class="toc-number">1.</span> <span class="toc-text">it中不变的东西</span></a></li></ol>
  
   </div>
 

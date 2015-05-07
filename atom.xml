@@ -4,7 +4,7 @@
   <subtitle><![CDATA[一个.net软件工程师，之前做过其它的事，以后还是努力的奔跑]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shadowlaser.github.io/"/>
-  <updated>2015-05-06T14:38:12.065Z</updated>
+  <updated>2015-05-07T14:11:01.197Z</updated>
   <id>http://shadowlaser.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[万丈高楼地基重要]]></title>
+    <link href="http://shadowlaser.github.io/2015/05/07/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%9C%B0%E5%9F%BA%E9%87%8D%E8%A6%81/"/>
+    <id>http://shadowlaser.github.io/2015/05/07/万丈高楼地基重要/</id>
+    <published>2015-05-07T13:38:19.000Z</published>
+    <updated>2015-05-07T14:11:01.197Z</updated>
+    <content type="html"><![CDATA[<p>今天在网上又读了一次采访左耳朵耗子的文章，还是感慨了一下，正好解惑自己最近一段时间的问题。<br><a id="more"></a><br>学习各种眼花缭乱的语言、工具都不如基础知识的重要性，就像武侠小说的内功一样，普通的招式在内功深厚的人手里，照样能厉害百倍，最后的就是无形，招式已经不重要了，非常像it中的各类语言，语法什么真能花很长时间学习吗？基础扎实的人，很短时间也能学会，毕竟根本性的东西都是没有变化的，只是适用于语言的方式变现出来而已，本质的东西是不变的。</p>
+<h2 id="it中不变的东西">it中不变的东西</h2><ol>
+<li>计算机硬件。<br> 现在还是采用的冯诺依曼的体系结构，材料变了，实现方式变了，但是还是老几样，所以学习还算相当一段时间不会变的，虽然量子计算机已经有这概念了，能正式使用那还是需要有相当一段路要走的。</li>
+<li>网络协议<br> 网络就是通信，这些传输介质可能发生变化，但是那些成熟的网络协议是不会改变的，毕竟现在的计算机网络都是需要靠这些协议相互通信的，暂时不会出现变更，要替换现有的网络协议真的成本太高了，过度时期必然不断，就像32位cpu到64位cpu过度一样。</li>
+<li>操作系统<br> 现在的几种类型的OS已经非常成熟且庞大了，现在的每年的微软或者linux的系统都是在原有的概念上使用更好的方式或者增加或者减少，但是主要功能都没有变，这个好像说起来有点勉强，不过在用户使用的过程中真的是这样的。</li>
+<li>算法、数据结构<br> 算法和数据结构是脱离语言的，所以它具有广泛的通用性，毕竟这个基础真的能看到非常大的好处，代码效率、简洁上都非常不错，真的是一个比较厉害的分水岭，数据库数据检索、最短路径等等这些都是算法支撑的，</li>
+<li>其它<br> 数学、物理等等以前学习的纯理论的东西都是不变的，毕竟现在科技基础就是这些。</li>
+</ol>
+<p>之前自己着相了，学这门好还是学习那门语言好，最后发现自己背离了初衷，语言是为了实现某些东西的，它是一个辅助性的工具而已，最重要的还是你的思想。</p>
+<p>基础这些东西，如果没有打牢靠，高楼肯定建不高的，必然需要重新回过头来学习，所以趁早打牢靠。</p>
+<p>修炼好深厚的内功，成为绝世高手指日可待了，什么招式不要被这些带偏了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天在网上又读了一次采访左耳朵耗子的文章，还是感慨了一下，正好解惑自己最近一段时间的问题。<br>]]>
+    
+    </summary>
+    
+      <category term="路上" scheme="http://shadowlaser.github.io/tags/%E8%B7%AF%E4%B8%8A/"/>
+    
+      <category term="思考" scheme="http://shadowlaser.github.io/categories/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[tf 一些问题整理]]></title>
@@ -643,38 +672,6 @@
     </summary>
     
       <category term="js" scheme="http://shadowlaser.github.io/tags/js/"/>
-    
-      <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[sql 一条记录多次操作（分隔符或者其它处理）--替换游标]]></title>
-    <link href="http://shadowlaser.github.io/2015/04/23/sql-%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95%E5%A4%9A%E6%AC%A1%E6%93%8D%E4%BD%9C%EF%BC%88%E5%88%86%E9%9A%94%E7%AC%A6%E6%88%96%E8%80%85%E5%85%B6%E5%AE%83%E5%A4%84%E7%90%86%EF%BC%89-%E6%9B%BF%E6%8D%A2%E6%B8%B8%E6%A0%87/"/>
-    <id>http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/</id>
-    <published>2015-04-23T10:04:19.000Z</published>
-    <updated>2015-04-23T15:14:41.199Z</updated>
-    <content type="html"><![CDATA[<p>在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">表a</span><br><span class="line"><span class="header">FF字段</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">001,002,003</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">004,005</span><br><span class="line">-----------</span></span><br><span class="line">006</span><br></pre></td></tr></table></figure></p>
-<p>通常我们遇到没有办法替换游标的原因就是因为出现了上面类似的记录，一条记录需要进行单独处理。<br>这块解决方案，先是把上面的记录的内容改成多条，具体做法如下：</p>
-<ol>
-<li>建立两张张表a的临时表 a1，a2；其中a1，为a的复制表，a2表为空白表</li>
-<li>使用while循环判select top 1 ff from a1 where charindex(‘,’,ff)&gt;0 是否存在，如果存在执行如下操作：<ol>
-<li>insert into a2 select substring(ff,1,charindex(‘,’,ff)-1) from a1 where charindex(‘,’,ff)&gt;0  —-取得001插入第一条记录，取得004插入第二条</li>
-<li>update a1 set ff=substring(ff,charindex(‘,’,ff)+1,len(ff)-charindex(‘,’,ff)) where charindex(‘,’,ff)&gt;0 —去掉已经插入a2表的记录中的内容</li>
-<li>继续循环while判断<br>这样我们就得到了a1和a2表是已经完全被拆开ff字段的记录的记录了，可以像下面一样使用了<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a1</span><br><span class="line"><span class="built_in">union</span> <span class="built_in">all</span></span><br><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a2</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<p>这样单条记录多次被操作不想使用游标的一种情况就得到了解决。<br>ps：大家需要注意，在临时表建立时，肯定不能有索引的存在的，其它的问题根据具体情况解决</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。<br><figure cla]]>
-    </summary>
-    
-      <category term="database" scheme="http://shadowlaser.github.io/tags/database/"/>
-    
-      <category term="sql" scheme="http://shadowlaser.github.io/tags/sql/"/>
     
       <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
