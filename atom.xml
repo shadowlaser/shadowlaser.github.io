@@ -4,7 +4,7 @@
   <subtitle><![CDATA[一个.net软件工程师，之前做过其它的事，以后还是努力的奔跑]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://shadowlaser.github.io/"/>
-  <updated>2015-05-07T14:11:01.197Z</updated>
+  <updated>2015-05-08T14:25:12.364Z</updated>
   <id>http://shadowlaser.github.io/</id>
   
   <author>
@@ -13,6 +13,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在技术这条路上需要学习的东西还有很多]]></title>
+    <link href="http://shadowlaser.github.io/2015/05/08/%E5%9C%A8%E6%8A%80%E6%9C%AF%E8%BF%99%E6%9D%A1%E8%B7%AF%E4%B8%8A%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%9C%E8%A5%BF%E8%BF%98%E6%9C%89%E5%BE%88%E5%A4%9A/"/>
+    <id>http://shadowlaser.github.io/2015/05/08/在技术这条路上需要学习的东西还有很多/</id>
+    <published>2015-05-08T13:47:40.000Z</published>
+    <updated>2015-05-08T14:25:12.364Z</updated>
+    <content type="html"><![CDATA[<pre><code>以前觉得自己的技术应该不差了，基础的东西还是知道一些，前些年一直也在看着基础，今天发现自己还有很长的路要走。
+</code></pre><a id="more"></a>
+<p>今天在公司看了一下需要学习的技术，其实也简单就是mvc体系的内容，因为产品是mvc的结构，现在赶紧趁这段时间学习一下技术，免得有活的时候因为技术的问题花费很长的时间，特别是基础的问题，于是开始今天的tasklist</p>
+<h2 id="数据库连接？">数据库连接？</h2><p>看到数据库连接了，哦，需要连接数据库了，用了啥东西呢，然后搜了一下，发现是ado.net 然后找了一个非常棒的描述ado.net的博客，有概念到实践，刚好把我在上一个项目的一个没有注意到的问题解决了。</p>
+<blockquote>
+<p>ado.net get</p>
+</blockquote>
+<p>而后数据库连接字符串的配置，不知道啥含义，于是又学到了数据库连接池、超时设置、数据库连接见识、sql server 异步执行等概念。</p>
+<blockquote>
+<p>连接字符串配置 get</p>
+</blockquote>
+<p>然后开始登陆了</p>
+<h2 id="mvc功能">mvc功能</h2><h3 id="1_特性">1 特性</h3><p>首先登陆，发现有特性，特性以前自己只是用，刚好有时间，那就一并学习，嗯，特性可以自定义，特性的适用范围、特性的调用方式、特性的自定义等</p>
+<blockquote>
+<p>Attribute get</p>
+</blockquote>
+<h3 id="2_登录认证方式">2 登录认证方式</h3><p>登陆的时候发现使用的是以前项目不清楚的认证方式：<code>form认证</code>，这种方式不陌生，但是外面使用的membership就不熟悉了，还有获取角色是怎么回事？得好好研究研究，正好解决了一个前段时间的一个疑惑，就是不论一个类型的浏览器开多少个会话，总是一个用户，因为cookie么，当时没想到是cookie，只是想到肯定不是在内存会话中，这些内容真的获益匪浅，正好扩充给一下自己的知识库，自己也查了一些资料。</p>
+<blockquote>
+<p>mvc登陆示例登录方式 get</p>
+</blockquote>
+<h3 id="3_错误页面">3 错误页面</h3><p>之前系统出现了找不到路径的情况的异常页面，并且没有处理，于是就查找了一下未捕获异常的处理方式</p>
+<ol>
+<li>单个页面或者当个controller</li>
+<li>mvc中filter</li>
+<li>global文件中的配置</li>
+</ol>
+<p>发现了产品使用的是登录时单个方法捕获异常，跳到指定的view，这个处理太粗糙了，这个需要在后面的工作中进行改进，并且没有404的指定页面这个也需要进行加强。</p>
+<blockquote>
+<p>异常捕获 get</p>
+</blockquote>
+<h3 id="4-_filter">4. filter</h3><p>这个是在处理错误页面的时候看到了内容，嗯，正好研究，发现这个过滤器挺强大的，跟Attribute形式类似，正好一块学习了，调用方式，自定义方式等等。</p>
+<blockquote>
+<p>filter get</p>
+</blockquote>
+<h3 id="5-_razor_引擎">5. razor 引擎</h3><p>之后自己还看了一部分的mvc razor引擎的语法，真的简洁易懂了，新建了一些测试的web程序，好好把所有的内容学习了一遍，最起码知道这是什么那是什么了，有引申了跨站攻击，xss攻击的预防。</p>
+<p>以上就是今天学到的一部分，这些内容一下把自己前几天项目不过如此的想法批了一顿，在这个项目中，这些基础的内容正是我现在欠缺的，毕竟自己没有系统的学习过，正好这个项目的基础满足我，这让我萌生一个想法，我不知道哪些东西不知道，但是别人知道啊，知道的话就会用出来，那么学习别人的项目就能知道我有哪些东西不知道，并且可以学习到别人设计方式，对自己真是好处多多，都没有办法不成长了。</p>
+<h2 id="总结">总结</h2><pre><code>最后实际上我把云笔记上的技术列表拿出来看了一下，发现自己还有非常一大堆概念和技术学习，特别是基础的内容，《<span class="class">.net</span> 框架程序设计》这本书现在看到第<span class="number">5</span>章，之前的启发式非常大的，自己又有干劲往前冲了。
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<pre><code>以前觉得自己的技术应该不差了，基础的东西还是知道一些，前些年一直也在看着基础，今天发现自己还有很长的路要走。
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="思考" scheme="http://shadowlaser.github.io/tags/%E6%80%9D%E8%80%83/"/>
+    
+      <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[万丈高楼地基重要]]></title>
@@ -648,32 +704,6 @@
       <category term="团队建设" scheme="http://shadowlaser.github.io/tags/%E5%9B%A2%E9%98%9F%E5%BB%BA%E8%AE%BE/"/>
     
       <category term="思考" scheme="http://shadowlaser.github.io/tags/%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[转换字符串--站在巨人肩膀上思考]]></title>
-    <link href="http://shadowlaser.github.io/2015/04/23/%E8%BD%AC%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E8%82%A9%E8%86%80%E4%B8%8A%E6%80%9D%E8%80%83/"/>
-    <id>http://shadowlaser.github.io/2015/04/23/转换字符串-站在巨人肩膀上思考/</id>
-    <published>2015-04-23T10:11:58.000Z</published>
-    <updated>2015-04-23T15:14:22.708Z</updated>
-    <content type="html"><![CDATA[<p>项目中使用js进行数据前台的显示，遇到一个问题和解决方法，对解决方法进行思考。</p>
-<p>后台传数据给js，js负责把得到的数据放到img标签的title中，这时问题出现了，后台的数据又特殊字符&XXXX;（“·”），这样在title中显示的时候就成为了的字符了</p>
-<ol>
-<li>于是就开始搜索怎么使用js把&XXXX;转换为“·”，找了很多文章写的都不是很好，写了自己一套的js转义函数进行转义，这个问题没有这么复杂。</li>
-<li>开始思考jquery有什么好的方法，没有找到，于是放弃。</li>
-<li>html的显示文字时会自动转义为显示的字符，那么让html自己替我转一下，然后再获取内容不久好了？于是使用jquery把需要转义的字符串填写到这个标签的html方法内，然后再取出来，取出来的字符串已经被转义过了。</li>
-</ol>
-<h1 id="总结：">总结：</h1><pre><code>善于利用已经存在的事物来解决遇到的问题，寻找到最简单的方法。
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>项目中使用js进行数据前台的显示，遇到一个问题和解决方法，对解决方法进行思考。</p>
-<p>后台传数据给js，js负责把得到的数据放到img标签的title中，这时问题出现了，后台的数据又特殊字符&XXXX;（“·”），这样在title中显示的时候就成为了的字符了</p>]]>
-    </summary>
-    
-      <category term="js" scheme="http://shadowlaser.github.io/tags/js/"/>
-    
-      <category term="技术" scheme="http://shadowlaser.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
