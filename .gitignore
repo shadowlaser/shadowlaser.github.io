@@ -1,24 +1,14 @@
 .DS_Store
-<<<<<<< HEAD
 Thumbs.db
 db.json
 *.log
 node_modules/
 public/
 .deploy*/
-=======
 .sass-cache
 .gist-cache
 .pygments-cache
 _deploy
 public
-sass.old
-source.old
-source/_stash
-source/stylesheets/screen.css
-vendor
 node_modules
-<<<<<<< HEAD
->>>>>>> parent of 57389bc... 从新提交一次文章
-=======
->>>>>>> parent of 57389bc... 从新提交一次文章
+
