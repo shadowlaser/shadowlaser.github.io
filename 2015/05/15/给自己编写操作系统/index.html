@@ -4,28 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>asp.net mvc中获取非mvc页面的session值 | Shadowlaser&#39; Blog</title>
+    <title>给自己编写操作系统 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="项目中部分功能由mvc机制做的还有一部分纯aspx页面做的代码。
-想在mvc的controller中直接获取session值后，发现完全没有值，然后经过debug发现aspx页面中session中已经赋值了，那么猜测mvc和传统的非mvc 页面使用的是不同的session机制。
-经过跟踪查看，发现传统的非mvc使用的session是System.Web.HttpContext.Current.Se">
+    <meta name="description" content="今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="asp.net mvc中获取非mvc页面的session值">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/asp-net-mvc中获取非mvc页面的session值/index.html">
+<meta property="og:title" content="给自己编写操作系统">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/05/15/给自己编写操作系统/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="项目中部分功能由mvc机制做的还有一部分纯aspx页面做的代码。
-想在mvc的controller中直接获取session值后，发现完全没有值，然后经过debug发现aspx页面中session中已经赋值了，那么猜测mvc和传统的非mvc 页面使用的是不同的session机制。
-经过跟踪查看，发现传统的非mvc使用的session是System.Web.HttpContext.Current.Se">
+<meta property="og:description" content="今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="asp.net mvc中获取非mvc页面的session值">
-<meta name="twitter:description" content="项目中部分功能由mvc机制做的还有一部分纯aspx页面做的代码。
-想在mvc的controller中直接获取session值后，发现完全没有值，然后经过debug发现aspx页面中session中已经赋值了，那么猜测mvc和传统的非mvc 页面使用的是不同的session机制。
-经过跟踪查看，发现传统的非mvc使用的session是System.Web.HttpContext.Current.Se">
+<meta name="twitter:title" content="给自己编写操作系统">
+<meta name="twitter:description" content="今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -82,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/asp-net-mvc中获取非mvc页面的session值/" title="asp.net mvc中获取非mvc页面的session值" itemprop="url">asp.net mvc中获取非mvc页面的session值</a>
+      <a href="/2015/05/15/给自己编写操作系统/" title="给自己编写操作系统" itemprop="url">给自己编写操作系统</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T10:22:39.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-05-15T14:10:17.000Z" itemprop="datePublished"> 发表于 2015-05-15</time>
     
   </p>
 </header>
@@ -98,28 +92,51 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-number">1.</span> <span class="toc-text">总结：</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>项目中部分功能由mvc机制做的还有一部分纯aspx页面做的代码。</p>
-<p>想在mvc的controller中直接获取session值后，发现完全没有值，然后经过debug发现aspx页面中session中已经赋值了，那么猜测mvc和传统的非mvc 页面使用的是不同的session机制。</p>
-<p>经过跟踪查看，发现传统的非mvc使用的session是System.Web.HttpContext.Current.Session<br>而mvc使用的是((System.Web.Mvc.Controller)(this)).Session，至此问题已经明确了。</p>
-<h2 id="总结：">总结：</h2><pre><code>asp<span class="class">.net</span> mvc使用了自己的一套Session系统。
-</code></pre>  
+		<pre><code>今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。
+</code></pre><a id="more"></a>
+<p>今天读了《做自己的CEO——个人管理系统构建》文章收获颇丰，作者讲述了自己从不会个人管理系统建立之前与之后实施一段时间的对比，这一下子让我想到了之前的自己的一段自己觉得整个世界都在掌控内时期，当时自己使用了个人管理，特别是心境那段时间提升非常迅速的时候，事半功倍，觉得这个世界都变得不同了。</p>
+<p><code>知道的越多觉越得自己越无知</code>，这个感触就是那段时期产生的，当时觉得，世界还可以是这样？事情还可以这么做？原来世界有运转规律的，又觉得自己能干很多事情，以前连想都没有想过的事情，这个时候，总觉得自己太无知了，如果遇到下一个问题怎么办？怎么处理？自己总结了很多，但是总觉得还是不够，然后慢慢的使用总结出来的东西来重新认识整个世界，确实带来了非常大的帮助，可是心底总有点不安，总是在想还有没有其它更好的工具方法来让自己更好的认知这个世界。</p>
+<p>今天读了作者的文章之后，自己恍然大悟，自己就是没有把这些系统的整理出来，形成自己的个人管理系统的一部分，导致了，自己一方面想的非常深入，但是另一方面有如同婴儿一般无知，最终结果使得自己看着非常不和谐，可以想象一下两个极端同时在一个人身上展现，是非常违和的。</p>
+<p>之后自己偶尔会遗忘，时间久了偶尔才会记起自己看世界的工具，文章中作者提到一篇文章，其实自己以前也看过，只不过当时没有意识到《做事靠系统，而不是靠感觉》，人真的很情绪化，这个是本性，又由于你的心智建立在自己主观意识上的，那么必然有时候就是不顶用，靠系统呢，我不用太多的思考，我的个人管理系统已经非常完备的回答了自己下一步干什么，不给自己迷茫或者疑惑、发愣的时间，因为自己的一套系统直接指导自己该怎么处理。</p>
+<p>还有自己零零碎碎的总结，总是没有一套章法，导致了自己同一类型的事情，有可能遗漏了这个，那件事情有可能遗漏了那个，如果建立起来系统的话，把系统的方法都拿出来进行一步步的处理，这样除非系统出了问题，否则肯定没有遗漏的问题的，就算有遗漏，使用monitor进行更新，那么自己的系统就更加完备了。</p>
+<p>自己需要一套个人的管理系统，要是适合自己的，自己个人管理系统需要可以自行进化的，所以自己需要几个monitor系统进行管理自动升级个人管理系统，说了这么多总觉得是自己在编写一个植入我脑袋里的OS，想想还是非常酷的，下面是一个雏形，后面再进行慢慢完善，参考了原文章作者的个人管理系统：</p>
+<ul>
+<li>monitor系统（meta system）<ul>
+<li>更新管理系统 // 对自己已经过时或者错误、不合适的个人管理子系统进行更新，符合CRUD（create、read、update、delete）操作</li>
+<li>反省管理系统 // 最自己的系统不断的进行反思。</li>
+<li>个人成长管理系统</li>
+</ul>
+</li>
+<li>知识管理系统</li>
+<li>学习管理系统</li>
+<li>行为管理系统</li>
+<li>情绪管理系统</li>
+<li>人脉管理系统</li>
+<li>家庭管理系统</li>
+<li>目标管理系统</li>
+<li>财富管理系统</li>
+<li>健康管理系统</li>
+<li>个人品牌管理系统  </li>
+</ul>
+<p>以上就是自己现在能想到的几个系统的雏形，在以后还需要不断的详细进行完善，最终靠系统进行跟人升级，早日达到像作者那样的感觉，自己把作者blog的链接也贴到自己的blog上。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/个人管理/">个人管理</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  <span></span> <a href="/tags/升级/">升级</a><a href="/tags/思考/">思考</a>
   </div>
 
 </div>
@@ -128,7 +145,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/asp-net-mvc中获取非mvc页面的session值/" data-title="asp.net mvc中获取非mvc页面的session值 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/05/15/给自己编写操作系统/" data-title="给自己编写操作系统 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -141,19 +158,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" title="关于文件的UTF-8的BOM标记问题记录">
-  <strong>上一篇：</strong><br/>
-  <span>
-  关于文件的UTF-8的BOM标记问题记录</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/asp-ne中使用ajax和controller进行通信问题记录/"  title="asp.ne中使用ajax和controller进行通信问题记录">
+<a href="/2015/05/14/今天工作时有一定时间进行了思考/"  title="今天工作时有一定时间进行了思考">
  <strong>下一篇：</strong><br/> 
- <span>asp.ne中使用ajax和controller进行通信问题记录
+ <span>今天工作时有一定时间进行了思考
 </span>
 </a>
 </div>
@@ -174,7 +183,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-number">1.</span> <span class="toc-text">总结：</span></a></li></ol>
+ 
  
   </div>
 
