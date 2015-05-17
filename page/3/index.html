@@ -38,7 +38,7 @@
 		
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Shadowlaser&#39; Blog">Shadowlaser&#39; Blog</a></h1>
-				<h2 class="blog-motto">一个.net软件工程师，之前做过其它的事，以后还是努力的奔跑</h2>
+				<h2 class="blog-motto">一个.net软件工程师，致力于做一个有思想、有创新能力的软件工程师，奔跑吧！</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -71,6 +71,71 @@
     </header>
     <div id="container">
       <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/" title="关于使用.net页面刷新时的问题下拉列表框值改变时，页面动态刷新" itemprop="url">关于使用.net页面刷新时的问题下拉列表框值改变时，页面动态刷新</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T10:29:30.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>在使用其它的代码的过程中，使用了既有的代码，并且原有的代码中使用了，列表框的值在改变的时候，页面会被刷新一次，新的页面中是需要去掉的。</p>
+<p>经过反复的实验和调查，发现，在动态空间中有一个属性是AutoPostBack（自动根据Web控件的一些事件，将页面自动发回服务器），这样我的工作就是不让这块的代码和服务器交互，所以在页面初始化的时候使用了如下的代码，完美的解决了问题：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ControlXXXX.<span class="variable">AutoPostBack=</span><span class="constant">false</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="思考">思考</h2><p>   在我们知道了我们需要做的目的后，根据目的再来寻找方法，会快一些。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
    
     
@@ -672,81 +737,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/" title="sql 一条记录多次操作（分隔符或者其它处理）--替换游标" itemprop="url">sql 一条记录多次操作（分隔符或者其它处理）--替换游标</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T10:04:19.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">表a</span><br><span class="line"><span class="header">FF字段</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">001,002,003</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">004,005</span><br><span class="line">-----------</span></span><br><span class="line">006</span><br></pre></td></tr></table></figure></p>
-<p>通常我们遇到没有办法替换游标的原因就是因为出现了上面类似的记录，一条记录需要进行单独处理。<br>这块解决方案，先是把上面的记录的内容改成多条，具体做法如下：</p>
-<ol>
-<li>建立两张张表a的临时表 a1，a2；其中a1，为a的复制表，a2表为空白表</li>
-<li>使用while循环判select top 1 ff from a1 where charindex(‘,’,ff)&gt;0 是否存在，如果存在执行如下操作：<ol>
-<li>insert into a2 select substring(ff,1,charindex(‘,’,ff)-1) from a1 where charindex(‘,’,ff)&gt;0  —-取得001插入第一条记录，取得004插入第二条</li>
-<li>update a1 set ff=substring(ff,charindex(‘,’,ff)+1,len(ff)-charindex(‘,’,ff)) where charindex(‘,’,ff)&gt;0 —去掉已经插入a2表的记录中的内容</li>
-<li>继续循环while判断<br>这样我们就得到了a1和a2表是已经完全被拆开ff字段的记录的记录了，可以像下面一样使用了<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a1</span><br><span class="line"><span class="built_in">union</span> <span class="built_in">all</span></span><br><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a2</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<p>这样单条记录多次被操作不想使用游标的一种情况就得到了解决。<br>ps：大家需要注意，在临时表建立时，肯定不能有索引的存在的，其它的问题根据具体情况解决</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/database/">database</a><a href="/tags/sql/">sql</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -769,7 +759,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工作/" title="工作">工作<sup>1</sup></a></li>
+			<li><a href="/categories/工作/" title="工作">工作<sup>2</sup></a></li>
 		  
 		
 		  
@@ -822,6 +812,10 @@
 			
 		
 			
+				<li><a href="/tags/路上/" title="路上">路上<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/vs/" title="vs">vs<sup>1</sup></a></li>
 			
 		
@@ -838,7 +832,7 @@
 			
 		
 			
-				<li><a href="/tags/升级/" title="升级">升级<sup>1</sup></a></li>
+				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>1</sup></a></li>
 			
 		
 			
@@ -854,7 +848,7 @@
 			
 		
 			
-				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>1</sup></a></li>
+				<li><a href="/tags/成长/" title="成长">成长<sup>1</sup></a></li>
 			
 		
 			
@@ -866,11 +860,7 @@
 			
 		
 			
-				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+				<li><a href="/tags/升级/" title="升级">升级<sup>1</sup></a></li>
 			
 		
 		</ul>
