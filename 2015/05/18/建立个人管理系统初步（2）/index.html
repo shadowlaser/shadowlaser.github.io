@@ -4,28 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>java语言中使用三元式的时候应该注意的问题 | Shadowlaser&#39; Blog</title>
+    <title>建立个人管理系统初步（2） | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="今天在项目中改领导要求的代码表现的时候发现了一个很有趣的问题。出问题的代码情况类似如下：
-12Integer test1 = null;System.out.println(&quot;test1 = &quot; + (test1+1));
-看到代码后，这样在test1为null的情况下，那么打印语句肯定会抛空指针异常的，随即我修改了代码，代码像下面看到的这样:12Integer test1=null;System">
+    <meta name="description" content="这几天正在建立自己的个人管理系统，当时觉得作者建立的不错，虽然模模糊糊但是觉得应该不是很复杂，直到自己上手开始建立，才认识到这不是复杂的问题，是根本不知道怎么做的问题，一下子觉得易仁永澄真的很厉害，自己记录一下这两天自己的探索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java语言中使用三元式的时候应该注意的问题">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/java语言中使用三元式的时候应该注意的问题/index.html">
+<meta property="og:title" content="建立个人管理系统初步（2）">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/05/18/建立个人管理系统初步（2）/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="今天在项目中改领导要求的代码表现的时候发现了一个很有趣的问题。出问题的代码情况类似如下：
-12Integer test1 = null;System.out.println(&quot;test1 = &quot; + (test1+1));
-看到代码后，这样在test1为null的情况下，那么打印语句肯定会抛空指针异常的，随即我修改了代码，代码像下面看到的这样:12Integer test1=null;System">
+<meta property="og:description" content="这几天正在建立自己的个人管理系统，当时觉得作者建立的不错，虽然模模糊糊但是觉得应该不是很复杂，直到自己上手开始建立，才认识到这不是复杂的问题，是根本不知道怎么做的问题，一下子觉得易仁永澄真的很厉害，自己记录一下这两天自己的探索">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java语言中使用三元式的时候应该注意的问题">
-<meta name="twitter:description" content="今天在项目中改领导要求的代码表现的时候发现了一个很有趣的问题。出问题的代码情况类似如下：
-12Integer test1 = null;System.out.println(&quot;test1 = &quot; + (test1+1));
-看到代码后，这样在test1为null的情况下，那么打印语句肯定会抛空指针异常的，随即我修改了代码，代码像下面看到的这样:12Integer test1=null;System">
+<meta name="twitter:title" content="建立个人管理系统初步（2）">
+<meta name="twitter:description" content="这几天正在建立自己的个人管理系统，当时觉得作者建立的不错，虽然模模糊糊但是觉得应该不是很复杂，直到自己上手开始建立，才认识到这不是复杂的问题，是根本不知道怎么做的问题，一下子觉得易仁永澄真的很厉害，自己记录一下这两天自己的探索">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -82,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/" title="java语言中使用三元式的时候应该注意的问题" itemprop="url">java语言中使用三元式的时候应该注意的问题</a>
+      <a href="/2015/05/18/建立个人管理系统初步（2）/" title="建立个人管理系统初步（2）" itemprop="url">建立个人管理系统初步（2）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T13:39:32.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-05-18T14:04:18.000Z" itemprop="datePublished"> 发表于 2015-05-18</time>
     
   </p>
 </header>
@@ -98,37 +92,20 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#结论："><span class="toc-number">1.</span> <span class="toc-text">结论：</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先，建立目标管理系统"><span class="toc-number">1.</span> <span class="toc-text">首先，建立目标管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其次，你要找到人生的意义"><span class="toc-number">2.</span> <span class="toc-text">其次，你要找到人生的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#再者，你需要远景"><span class="toc-number">3.</span> <span class="toc-text">再者，你需要远景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剩下的大头：年度目标"><span class="toc-number">4.</span> <span class="toc-text">剩下的大头：年度目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
 		
 		</div>
 		
-		<p>今天在项目中改领导要求的代码表现的时候发现了一个很有趣的问题。<br>出问题的代码情况类似如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer test1 = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + (test1+<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-<p>看到代码后，这样在test1为null的情况下，那么打印语句肯定会抛空指针异常的，随即我修改了代码，代码像下面看到的这样:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer test1=<span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + (test1==<span class="keyword">null</span>?test1:(test1+<span class="number">1</span>)));</span><br></pre></td></tr></table></figure></p>
-<p>就是上面的代码出现了同样的问题，还是在抛空指针一场的问题，不应该啊？！难道是java对三元式的处理是全部计算的？（猜想1）于是我写了下面的代码进行验证：<br><a id="more"></a><br><code>代码1：</code><br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.<span class="keyword">out</span>.println(<span class="string">"test1 = "</span>+ <span class="keyword">null</span>);</span><br></pre></td></tr></table></figure></p>
-<p><code>代码2：</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer test1=<span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + (test1==<span class="keyword">null</span>?-<span class="number">1</span>:(test1+<span class="number">1</span>)));</span><br></pre></td></tr></table></figure></p>
-<p>代码1只是为了验证可以打印null这种情况的。<br>代码2为了验证猜想1，但是呢，代码2是正常被执行了的,猜想1猜想失败了，既然貌似是三元式的第二个元的引起，于是我又猜想错误第三个元没有关系（猜想2），我用下面的代码进行验证：</p>
-<p><code>代码3：</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer test1=<span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span>+ (test1==<span class="keyword">null</span>?test1:test1));</span><br></pre></td></tr></table></figure></p>
-<p>代码3如上所说是为了排除和第三个元无关的,然后猜测代码正常执行的，但是，实际情况还是报空指针异常了。<br>猜测1和猜测2失败后，就能得到，跟三元式的2和3元都有关系。</p>
-<p>我有想起来三元式的形式是：  expression1?expression2:expression3<br>于是有了下面的代码：</p>
-<p><code>代码4：</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer test1=<span class="keyword">null</span>;</span><br><span class="line">Integer test2=(test1==<span class="keyword">null</span>?test1:(test1=<span class="number">123</span>));</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + test1);</span><br></pre></td></tr></table></figure></p>
-<p>代码4正常执行，输出了test1 = null ,又看着第三个元没有执行。<br>再验证：</p>
-<p><code>代码5：</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer test1=<span class="keyword">null</span>;</span><br><span class="line">Integer test2=(test1==<span class="keyword">null</span>?test1:(System.out.println(<span class="string">"test1"</span>)));</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + test1);</span><br></pre></td></tr></table></figure></p>
-<p><del>代码5语法直接都有问题，不应该啊？！</del>  这段代码是应该出问题的，自己理解有误，在2,3元上需要一个返回值的计算式而System.out.println(“test1”)没有返回值，所以理应出错。</p>
-<h3 id="结论：">结论：</h3><pre><code><span class="number">1.</span> java中，三元式中的第二和第三个元都进行了检查，检查的方法需要查看java中对三元式的实现才能确定。
-<span class="number">2.</span> expressio<span class="label">n1</span>?expressio<span class="label">n2</span>:expressio<span class="label">n3</span> 这样的形式的三元式，看看就行了，具体需要在使用的时候进行代码验证，否则就像本次问题一样，知识不足造成了bug的出现。
-</code></pre><p>以后还是尽量少用三元式，以防止预想之外的结果。</p>
-<p>上面问题的解决代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Integer tmp= <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">if</span>(test1==<span class="keyword">null</span>)&#123;</span><br><span class="line">    tmp=<span class="keyword">null</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    tmp=test1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><del>（完）</del></p>
-<p>今天在stackoverflow中提出了这个问题，然后有大牛解决了</p>
-<p><a href="http://stackoverflow.com/questions/18124745/java-ternary-operator-and-nullpointerexception" target="_blank" rel="external">http://stackoverflow.com/questions/18124745/java-ternary-operator-and-nullpointerexception</a></p>
-<p>在java中关于三元运算符有这么一个特性：</p>
-<pre><code><span class="number">1.</span>在第二个元和第三个元的类型相同的时候，那么返回一个<span class="number">2</span>,<span class="number">3</span>元的类型。
- (test1==<span class="literal">null</span>?test1:test1)也就是这句代码没有出错，返回的是一个Integer类型的值，Integer类型是允许有<span class="literal">null</span>的，所以本身代码就不会出问题。
-<span class="number">2.</span>在第二个元或者第三个元有基本类型的T的时候，那么不管另一个元是什么类型，都要最小化成基本类型T，所以如下的代码返回的是<span class="typename">int</span>类型，但是test1是<span class="literal">null</span>，这里有一个boxing的处理，所以造成了，返回的<span class="typename">int</span>类型有<span class="literal">null</span>值，最终造成了NPE异常的出现：
-</code></pre> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test2=(test1==<span class="keyword">null</span>?test1:-<span class="number">1</span>);</span><br><span class="line">test2=(test1==<span class="keyword">null</span>?test1:(test1+<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-<p>问题解决，本问题出现是java知识不足造成的，下面是java给的官方解释：</p>
-<p><a href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.25" target="_blank" rel="external">http://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.25</a></p>
+		<pre><code>这几天正在建立自己的个人管理系统，当时觉得作者建立的不错，虽然模模糊糊但是觉得应该不是很复杂，直到自己上手开始建立，才认识到这不是复杂的问题，是根本不知道怎么做的问题，一下子觉得易仁永澄真的很厉害，自己记录一下这两天自己的探索
+</code></pre><a id="more"></a>
+<h2 id="首先，建立目标管理系统">首先，建立目标管理系统</h2><p>最近两天是在建立目标管理系统，这个系统怎么说呢，我觉得是前期比较重要的，就像我之前的文章写的那样，以目标为导向，视野够高方向不错就OK，知道自己要干什么是不是先于怎么做？这个是我在觉定建立个人系统的时候，由于过后决定的，这个地方直接决定了以后努力的方向了，大方向要搞对，所以现有目标，这样我最起码不会再有什么迷茫、闲得发慌的情况出现了。</p>
+<h2 id="其次，你要找到人生的意义">其次，你要找到人生的意义</h2><p>这个真的说起来有点抽象，我这两天简直一有空就想，我的人生的意义是啥？最后还是参考了易仁永澄的文章和他的人生意义，最终确定了我的人生意义，这个其实比较重要的，就像目标一样，在建立目标管理系统的时候，你需要确定一下你未来要成为一个什么样的人？这就是人生意义，最后你所有的努力都会指向这个目标的，当然一下子确定不来的话，可以先找一个确定一下，反复问你的内心或者根据你的人生意义确定远景什么的，你会慢慢找到真正的人生意义，这个可能会耗时比较长。</p>
+<h2 id="再者，你需要远景">再者，你需要远景</h2><p>其实这个，对于自己来说，就是未来几年你要达到一个什么样的水平，记着，这个你可以这么写，首先以你现在的状态来推未来几年你的样子，这个时候请注意你这个时候时没有使用个人管理系统达到的一个水平，我觉得在这个基础上乘以3应该就差不多是你未来需要达到的水平，到底乘几？自己可以再想象一下你使用了个人管理系统之后未来几年的成就，做一下对比，厄，还是觉得直接用后者比较好，切忌夸大自己的能力，要脚踏现实，然后在增加一点你需要很努力才能达到的高度，然后确定远景。</p>
+<p>我是确定了一个自己的远景，其实一直都是在自己心里，只不过这几天翻出来了，觉得当时感觉真的很好。</p>
+<h2 id="剩下的大头：年度目标">剩下的大头：年度目标</h2><p>刚才参考了一下，易仁永澄的年度目标进行了我的年度目标规划，这个规划要跟你的远景相匹配，其实挺难的，我先做了一个初稿，在这几天补充完整，毕竟现在第一次做这么详细的年度计划，很多东西都会遗漏掉，自己每天想一点补充一点，这样自己需要形成一个年度计划模板，这样的话下次指定年度计划就快速、很少遗漏的制作了。</p>
+<p>现在我看着自己的初稿觉得真的要把自己累趴下，因为现在是把所有能想到的都进行了记录，这几天需要花时间进行优先级排序一下。</p>
+<h2 id="总结">总结</h2><p>以上是这两天想到的事情，其实目标管理系统在建立的时候，需要一个不断回顾的系统，来辅助这个系统的建立，不然你建立了一个完美的纸上的系统，回顾系统应该有自己的运转规则，我这几天在完善我之前的反省系统，正确在反省系统内建立起来一个回顾系统，这两个系统我称之为<code>meta系统</code>，他是贯穿整个个人系统之内的元系统，具有深远的意义和重大的影响。</p>
+<p>ps：这几天，时间没有分配好，导致这几天睡觉较晚，看来需要更正一下行动系统和目标系统了。<br>（完）</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -136,13 +113,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/java/">java</a>
+  <span></span> <a href="/tags/个人成长/">个人成长</a>
   </div>
 
 </div>
@@ -151,7 +128,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/java语言中使用三元式的时候应该注意的问题/" data-title="java语言中使用三元式的时候应该注意的问题 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/05/18/建立个人管理系统初步（2）/" data-title="建立个人管理系统初步（2） | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,19 +141,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/29/新公司的感受/" title="新公司的感受">
-  <strong>上一篇：</strong><br/>
-  <span>
-  新公司的感受</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/关于使用-net页面刷新时的问题下拉列表框值改变时，页面动态刷新/"  title="关于使用.net页面刷新时的问题下拉列表框值改变时，页面动态刷新">
+<a href="/2015/05/17/程序员进阶/"  title="程序员进阶">
  <strong>下一篇：</strong><br/> 
- <span>关于使用.net页面刷新时的问题下拉列表框值改变时，页面动态刷新
+ <span>程序员进阶
 </span>
 </a>
 </div>
@@ -197,7 +166,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#结论："><span class="toc-number">1.</span> <span class="toc-text">结论：</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先，建立目标管理系统"><span class="toc-number">1.</span> <span class="toc-text">首先，建立目标管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其次，你要找到人生的意义"><span class="toc-number">2.</span> <span class="toc-text">其次，你要找到人生的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#再者，你需要远景"><span class="toc-number">3.</span> <span class="toc-text">再者，你需要远景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剩下的大头：年度目标"><span class="toc-number">4.</span> <span class="toc-text">剩下的大头：年度目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
  
   </div>
 
