@@ -78,6 +78,71 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/05/08/在技术这条路上需要学习的东西还有很多/" title="在技术这条路上需要学习的东西还有很多" itemprop="url">在技术这条路上需要学习的东西还有很多</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-08T13:47:40.000Z" itemprop="datePublished"> 发表于 2015-05-08</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <pre><code>以前觉得自己的技术应该不差了，基础的东西还是知道一些，前些年一直也在看着基础，今天发现自己还有很长的路要走。
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/05/08/在技术这条路上需要学习的东西还有很多/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/思考/">思考</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/05/08/在技术这条路上需要学习的东西还有很多/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/05/07/万丈高楼地基重要/" title="万丈高楼地基重要" itemprop="url">万丈高楼地基重要</a>
   </h1>
   <p class="article-author">By
@@ -655,76 +720,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/" title="java语言中使用三元式的时候应该注意的问题" itemprop="url">java语言中使用三元式的时候应该注意的问题</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T13:39:32.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>今天在项目中改领导要求的代码表现的时候发现了一个很有趣的问题。<br>出问题的代码情况类似如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer test1 = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + (test1+<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-<p>看到代码后，这样在test1为null的情况下，那么打印语句肯定会抛空指针异常的，随即我修改了代码，代码像下面看到的这样:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer test1=<span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"test1 = "</span> + (test1==<span class="keyword">null</span>?test1:(test1+<span class="number">1</span>)));</span><br></pre></td></tr></table></figure></p>
-<p>就是上面的代码出现了同样的问题，还是在抛空指针一场的问题，不应该啊？！难道是java对三元式的处理是全部计算的？（猜想1）于是我写了下面的代码进行验证：<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/java/">java</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/java语言中使用三元式的时候应该注意的问题/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
   </nav>
 
 </div>
@@ -756,7 +754,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>20</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>21</sup></a></li>
 		  
 		
 		</ul>
@@ -777,15 +775,15 @@
 			
 		
 			
-				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>6</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/杂/" title="杂">杂<sup>2</sup></a></li>
+				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>7</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/乱/" title="乱">乱<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂/" title="杂">杂<sup>2</sup></a></li>
 			
 		
 			
@@ -805,7 +803,7 @@
 			
 		
 			
-				<li><a href="/tags/vs/" title="vs">vs<sup>1</sup></a></li>
+				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>1</sup></a></li>
 			
 		
 			
@@ -813,7 +811,7 @@
 			
 		
 			
-				<li><a href="/tags/个人管理/" title="个人管理">个人管理<sup>1</sup></a></li>
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
 			
 		
 			
@@ -829,7 +827,7 @@
 			
 		
 			
-				<li><a href="/tags/idea/" title="idea">idea<sup>1</sup></a></li>
+				<li><a href="/tags/个人管理/" title="个人管理">个人管理<sup>1</sup></a></li>
 			
 		
 			
@@ -845,7 +843,7 @@
 			
 		
 			
-				<li><a href="/tags/行为管理/" title="行为管理">行为管理<sup>1</sup></a></li>
+				<li><a href="/tags/idea/" title="idea">idea<sup>1</sup></a></li>
 			
 		
 		</ul>

@@ -4,25 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>sql 一条记录多次操作（分隔符或者其它处理）--替换游标 | Shadowlaser&#39; Blog</title>
+    <title>个人管理系统初显感觉 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。123456789例子：表aFF字段-----------001,002,003-----------004,005-----------006
-通常我们遇">
+    <meta name="description" content="说说这几天的慢慢建立管理系统的感受，感觉非常的棒，应该是有非常明显的感觉了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql 一条记录多次操作（分隔符或者其它处理）--替换游标">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/index.html">
+<meta property="og:title" content="个人管理系统初显感觉">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/05/28/个人管理系统初显感觉/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。123456789例子：表aFF字段-----------001,002,003-----------004,005-----------006
-通常我们遇">
+<meta property="og:description" content="说说这几天的慢慢建立管理系统的感受，感觉非常的棒，应该是有非常明显的感觉了。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sql 一条记录多次操作（分隔符或者其它处理）--替换游标">
-<meta name="twitter:description" content="在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。123456789例子：表aFF字段-----------001,002,003-----------004,005-----------006
-通常我们遇">
+<meta name="twitter:title" content="个人管理系统初显感觉">
+<meta name="twitter:description" content="说说这几天的慢慢建立管理系统的感受，感觉非常的棒，应该是有非常明显的感觉了。">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -79,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/" title="sql 一条记录多次操作（分隔符或者其它处理）--替换游标" itemprop="url">sql 一条记录多次操作（分隔符或者其它处理）--替换游标</a>
+      <a href="/2015/05/28/个人管理系统初显感觉/" title="个人管理系统初显感觉" itemprop="url">个人管理系统初显感觉</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T10:04:19.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-05-28T13:43:12.000Z" itemprop="datePublished"> 发表于 2015-05-28</time>
     
   </p>
 </header>
@@ -95,23 +92,17 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三年河东西"><span class="toc-number">1.</span> <span class="toc-text">三年河东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#懈怠的弊端"><span class="toc-number">2.</span> <span class="toc-text">懈怠的弊端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
 		
 		</div>
 		
-		<p>在数据库中操作大量的记录的时候，游标的性能真的是慢的令人发指，但是游标对一条记录操作方便性又令人爱不释手，有没有能兼顾性能又能方便呢，答案是肯定的，昨天正好进行项目sql语句优化，遇到了一个一条记录需要多次操作不能简单的使用其它语句替换的实例。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">表a</span><br><span class="line"><span class="header">FF字段</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">001,002,003</span><br><span class="line">-----------</span></span><br><span class="line"><span class="header">004,005</span><br><span class="line">-----------</span></span><br><span class="line">006</span><br></pre></td></tr></table></figure></p>
-<p>通常我们遇到没有办法替换游标的原因就是因为出现了上面类似的记录，一条记录需要进行单独处理。<br>这块解决方案，先是把上面的记录的内容改成多条，具体做法如下：</p>
-<ol>
-<li>建立两张张表a的临时表 a1，a2；其中a1，为a的复制表，a2表为空白表</li>
-<li>使用while循环判select top 1 ff from a1 where charindex(‘,’,ff)&gt;0 是否存在，如果存在执行如下操作：<ol>
-<li>insert into a2 select substring(ff,1,charindex(‘,’,ff)-1) from a1 where charindex(‘,’,ff)&gt;0  —-取得001插入第一条记录，取得004插入第二条</li>
-<li>update a1 set ff=substring(ff,charindex(‘,’,ff)+1,len(ff)-charindex(‘,’,ff)) where charindex(‘,’,ff)&gt;0 —去掉已经插入a2表的记录中的内容</li>
-<li>继续循环while判断<br>这样我们就得到了a1和a2表是已经完全被拆开ff字段的记录的记录了，可以像下面一样使用了<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a1</span><br><span class="line"><span class="built_in">union</span> <span class="built_in">all</span></span><br><span class="line"><span class="keyword">select</span> ff <span class="keyword">from</span> a2</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<p>这样单条记录多次被操作不想使用游标的一种情况就得到了解决。<br>ps：大家需要注意，在临时表建立时，肯定不能有索引的存在的，其它的问题根据具体情况解决</p>
+		<pre><code>说说这几天的慢慢建立管理系统的感受，感觉非常的棒，应该是有非常明显的感觉了。
+</code></pre><a id="more"></a>
+<p>这几天总觉得自己做事非常有精神，特别是心态这方面。</p>
+<h3 id="三年河东西">三年河东西</h3><p>这几天的感觉就像易仁永澄《三年河东西》里面说的描述的那样，自己感觉自己心态已经到那种指哪打哪的，虽然暂时的阶段是规范自己的行为后的一点信心的提升，不过这个足以证明个人管理系统带来的好处了，现在明显的感觉到有点错觉，这个感觉是以前体会不到的，每天都在做一些成长的事情，指定的时间做一些固定的事，日积月累，终会有一天发生质变，非常的确信，而且这种努力不是需要非常的痛苦，每天做一点，然后一个大的目标就在时间的作用下，慢慢完成了，而后你发现完成了就像喝水那样简单。</p>
+<h3 id="懈怠的弊端">懈怠的弊端</h3><p>由于自己上次锻炼受伤，导致了自己行为一度缓慢下来，这个是必然的过程，自己通过行为管理进行纠正，虽然有懈怠但是还是在缓慢的恢复中，这几天自己维持了最简单的几件事情的行动，却发现自己空余的时间又被其它的<code>浪费时间</code>的事情给占据了，所以自己需要进行再进行修正，弥补自己空余时间干了没干什么比较好的事情，需要进行一下目标的调整，或者行为的调整。</p>
+<h2 id="总结">总结</h2><p>这几天给自己的感觉是，自己旧的行为习惯真的非常的强大，稍不注意就恢复了以前的行为，那种对比较不合适的行为，看来个人管理这条路还有一段非常艰难的时期需要自己度过，这个过程不能放弃，否则努力全都成了白费了，不过，好处真的是非常强大，让人垂涎欲滴啊，而且直接让自己后面的人生越来越好。</p>
+<p>想想易仁永澄说的<code>指哪打哪</code>的那种境界，真的非常期待，我这块用做任何事情都<code>心如止水</code>来形容它。<br>(完)</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -119,13 +110,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/database/">database</a><a href="/tags/sql/">sql</a>
+  <span></span> <a href="/tags/个人成长/">个人成长</a>
   </div>
 
 </div>
@@ -134,7 +125,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/" data-title="sql 一条记录多次操作（分隔符或者其它处理）--替换游标 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/05/28/个人管理系统初显感觉/" data-title="个人管理系统初显感觉 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,19 +138,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/转换字符串-站在巨人肩膀上思考/" title="转换字符串--站在巨人肩膀上思考">
-  <strong>上一篇：</strong><br/>
-  <span>
-  转换字符串--站在巨人肩膀上思考</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/net-中已经引用了dll-但是编译报错找不到类型或者命名空间/"  title=".net 中已经引用了dll,但是编译报错找不到类型或者命名空间">
+<a href="/2015/05/27/行为管理/"  title="行为管理">
  <strong>下一篇：</strong><br/> 
- <span>.net 中已经引用了dll,但是编译报错找不到类型或者命名空间
+ <span>行为管理
 </span>
 </a>
 </div>
@@ -180,7 +163,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三年河东西"><span class="toc-number">1.</span> <span class="toc-text">三年河东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#懈怠的弊端"><span class="toc-number">2.</span> <span class="toc-text">懈怠的弊端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
  
   </div>
 
