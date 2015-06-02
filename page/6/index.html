@@ -78,6 +78,74 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/23/C-查询数据库时问题-Min-1-must-be-less-than-or-equal-to-max-1-in-Range-object/" title="C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object" itemprop="url">C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T09:41:55.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>这个问题是由于自己的粗心引起,当时定位到代码了,但是完全没有头绪,知道自己在实现上找到了问题.<br>    下面就是出错的代码:<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataRow[] tmpdrlist = tmpdt.<span class="keyword">Select</span>(string.<span class="keyword">Format</span>(<span class="string">"UserGroup = &#123;0&#125;"</span> ,dr[<span class="string">"UserGroup"</span>].<span class="keyword">ToString</span>()));</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码没有任何语法问题,只有在运行的时候出现了问题,当时百思不得其解,最后从业务实现上找到了,数据库字段UserGroup是字符串,就是这个原因,修改之后代码如下:<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataRow[] tmpdrlist = tmpdt.<span class="keyword">Select</span>(string.<span class="keyword">Format</span>(<span class="string">"UserGroup = '&#123;0&#125;'"</span> ,dr[<span class="string">"UserGroup"</span>].<span class="keyword">ToString</span>()));</span><br></pre></td></tr></table></figure></p>
+<p>就是这个单引号的问题,这种问题真是令人无语.</p>
+<p>总结:</p>
+<pre><code><span class="bullet">1. </span>如果编译时不报错,但是运行时报错,那么一般就是业务实现不正确或者其它的特性,所以这个时候你需要做的是检查业务和逻辑实现,而不是语法错误.
+<span class="bullet">2. </span>怎么提高这种细节处理是一个比较重要的问题,这个有点浪费时间.
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a><a href="/tags/database/">database</a><a href="/tags/sql/">sql</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/C-查询数据库时问题-Min-1-must-be-less-than-or-equal-to-max-1-in-Range-object/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/23/asp-net-发布时出现了Object-reference-not-set-to-an-instance-of-an-object错误/" title="asp.net 发布时出现了Object reference not set to an instance of an object错误" itemprop="url">asp.net 发布时出现了Object reference not set to an instance of an object错误</a>
   </h1>
   <p class="article-author">By
@@ -432,7 +500,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>25</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>26</sup></a></li>
 		  
 		
 		</ul>
@@ -445,11 +513,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/asp-net/" title="asp.net">asp.net<sup>11</sup></a></li>
+				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>11</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>10</sup></a></li>
+				<li><a href="/tags/asp-net/" title="asp.net">asp.net<sup>11</sup></a></li>
 			
 		
 			
