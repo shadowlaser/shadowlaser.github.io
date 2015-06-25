@@ -4,25 +4,34 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>asp.net调用xps对象GetFixedDocumentSequence出现异常 | Shadowlaser&#39; Blog</title>
+    <title>思想落地--有意识的干事 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+    <meta name="description" content="这几天自己的思考能力正在提升，很多时候忽视的事情逐渐意识到了，意识到后再针对问题解决就行了。
+思想落地在意识提升的时候，容易产生了思想增长的非常的快，我称之为”膨胀”，膨胀的时候非常容易发生自己”眼高手低”的情况，这个是切身体会，这个时候需要让思想落下来来为自己带来好的效益。
+
+自己想法不断的记录，并且不断的对思考方式进行完善，这个时候请确保这个是自己的事，不炫耀不做作。
+实践自己的想法，用自己的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="asp.net调用xps对象GetFixedDocumentSequence出现异常">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/index.html">
+<meta property="og:title" content="思想落地--有意识的干事">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/06/25/思想落地-有意识的干事/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+<meta property="og:description" content="这几天自己的思考能力正在提升，很多时候忽视的事情逐渐意识到了，意识到后再针对问题解决就行了。
+思想落地在意识提升的时候，容易产生了思想增长的非常的快，我称之为”膨胀”，膨胀的时候非常容易发生自己”眼高手低”的情况，这个是切身体会，这个时候需要让思想落下来来为自己带来好的效益。
+
+自己想法不断的记录，并且不断的对思考方式进行完善，这个时候请确保这个是自己的事，不炫耀不做作。
+实践自己的想法，用自己的">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="asp.net调用xps对象GetFixedDocumentSequence出现异常">
-<meta name="twitter:description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+<meta name="twitter:title" content="思想落地--有意识的干事">
+<meta name="twitter:description" content="这几天自己的思考能力正在提升，很多时候忽视的事情逐渐意识到了，意识到后再针对问题解决就行了。
+思想落地在意识提升的时候，容易产生了思想增长的非常的快，我称之为”膨胀”，膨胀的时候非常容易发生自己”眼高手低”的情况，这个是切身体会，这个时候需要让思想落下来来为自己带来好的效益。
+
+自己想法不断的记录，并且不断的对思考方式进行完善，这个时候请确保这个是自己的事，不炫耀不做作。
+实践自己的想法，用自己的">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -79,14 +88,14 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" title="asp.net调用xps对象GetFixedDocumentSequence出现异常" itemprop="url">asp.net调用xps对象GetFixedDocumentSequence出现异常</a>
+      <a href="/2015/06/25/思想落地-有意识的干事/" title="思想落地--有意识的干事" itemprop="url">思想落地--有意识的干事</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T09:51:22.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-06-25T13:36:52.000Z" itemprop="datePublished"> 发表于 2015-06-25</time>
     
   </p>
 </header>
@@ -95,33 +104,37 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结:"><span class="toc-number">1.</span> <span class="toc-text">总结:</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#思想落地"><span class="toc-number">1.</span> <span class="toc-text">思想落地</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有意识的观察"><span class="toc-number">2.</span> <span class="toc-text">有意识的观察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
 		
 		</div>
 		
-		<p>昨天在web端调用别人写的word处理dll时，出现了如下错误:</p>
-<p><code>The invocation of the constructor on type &#39;System.Windows.Documents.DocumentReference&#39; that matches the specified binding constraints threw an exception.&#39; Line number &#39;2&#39; and line position &#39;21&#39;.</code></p>
-<p>于是写了一个cs端程序进行问题确认，测试程序可以正常执行，这块可以排除代码逻辑的问题，有可能是环境或者其它方面考虑不足。</p>
-<p>同事指出可以查看详细的异常信息：在抛出异常的地方找到的innerexception是sta的问题，这个具体没有把信息保留下来.<br>根据innerexception的提示，发现了xps对象和其中的方法是STA的，但是aspx页面是MTA，经过几番周折找到遇到一样问题的人，链接如下:</p>
-<p><a href="http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net" target="_blank" rel="external">http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net</a></p>
-<p>问题真的是一样的，然后按照里面提供的链接(第二个)添加<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="variable">%@</span> Page Language=<span class="string">"C#"</span> AspCompat=<span class="string">"true"</span> <span class="variable">%&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用的地方</span></span><br><span class="line">System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span> <span class="keyword">thread</span> <span class="subst">=</span></span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span>(</span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span>ParameterizedThreadStart(ThreadMethod));</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span>Start(value);</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span><span class="keyword">Join</span>();<span class="comment">//等待结束</span></span><br><span class="line"><span class="comment">//线程函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="literal">void</span> ThreadMethod(object parameter)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//这里写的就是对xps处理的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结:">总结:</h1><pre><code><span class="bullet">1. </span>STA、MTA的概念需要熟悉，其它的线程，线程同步，线程池等概念需要再巩固一下了。
-</code></pre>  
+		<pre><code>这几天自己的思考能力正在提升，很多时候忽视的事情逐渐意识到了，意识到后再针对问题解决就行了。
+</code></pre><h3 id="思想落地">思想落地</h3><p>在意识提升的时候，容易产生了思想增长的非常的快，我称之为”膨胀”，膨胀的时候非常容易发生自己”眼高手低”的情况，这个是切身体会，这个时候需要让思想落下来来为自己带来好的效益。</p>
+<ol>
+<li>自己想法不断的记录，并且不断的对思考方式进行完善，这个时候请确保这个是自己的事，不炫耀不做作。</li>
+<li>实践自己的想法，用自己的行动对自己的记录进行支撑性验证，踏实做事。</li>
+<li>retrospect：对自己的行为的结果对照想法不断的进行修正。</li>
+<li>好的方法形成习惯，成为自己成长的一块基石。</li>
+</ol>
+<p>做好以上几点，能让自己的思想不再是飘在云端，而是踏踏实实的落在地上，接地气。</p>
+<h3 id="有意识的观察">有意识的观察</h3><p>在做事的时候，需要进行有意识的观察，这个时候一般以第三方的角度来看自己做事或者思考，容易发现自己在思考做事过程中的不足或者需要改进的地方，这个是”换位思考”的一种应用，如果每次自己的都能意识自己在观察自己，这种状态叫做”先知先觉”，之前还有”后知后觉”,”当知当觉”，这些状态不是短时间能跨越的，特别需要进行训练，不断的反复训练自己的意识。</p>
+<p>在初期的时候，使用提醒的方式进行意识，不断的提醒自己不要忘记，不断的进行训练，这样在一段时间内，自己会条件反射式的想起，这个时候也就是有了”当知当觉”的能力,再加上一些辅助的记录和反省措施就可以做到”先知先觉”</p>
+<h3 id="总结">总结</h3><p>做事考系统，不是靠感觉，感觉靠不住的，切身体会。</p>
+<p>（完）</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  <span></span> <a href="/tags/成长/">成长</a>
   </div>
 
 </div>
@@ -130,7 +143,7 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" data-title="asp.net调用xps对象GetFixedDocumentSequence出现异常 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/06/25/思想落地-有意识的干事/" data-title="思想落地--有意识的干事 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -143,19 +156,11 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/net-中已经引用了dll-但是编译报错找不到类型或者命名空间/" title=".net 中已经引用了dll,但是编译报错找不到类型或者命名空间">
-  <strong>上一篇：</strong><br/>
-  <span>
-  .net 中已经引用了dll,但是编译报错找不到类型或者命名空间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/执行力有多重要/"  title="执行力有多重要">
+<a href="/2015/06/24/你都在干些什么/"  title="你都在干些什么">
  <strong>下一篇：</strong><br/> 
- <span>执行力有多重要
+ <span>你都在干些什么
 </span>
 </a>
 </div>
@@ -176,7 +181,7 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结:"><span class="toc-number">1.</span> <span class="toc-text">总结:</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#思想落地"><span class="toc-number">1.</span> <span class="toc-text">思想落地</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有意识的观察"><span class="toc-number">2.</span> <span class="toc-text">有意识的观察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
  
   </div>
 

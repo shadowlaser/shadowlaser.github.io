@@ -78,6 +78,72 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/05/03/周围的朋友都开始结婚了/" title="周围的朋友都开始结婚了" itemprop="url">周围的朋友都开始结婚了</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-03T13:48:54.000Z" itemprop="datePublished"> 发表于 2015-05-03</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="1">1</h2><p>昨天参加了一个朋友的婚礼，他俩跟我一个组的，女的像汉子，男的喜欢做饭，关键他们都是程序员，一个百度，一个去哪儿，挺羡慕的。有机会和以前的同事坐了坐，自己更需要努力了。</p>
+<p>昨天没有参加一个朋友的婚礼，他俩一个是我初高中同学，一个是我高中同学，然后都到一个班了，一个是。。另一个是。。，没参加，挺羡慕的。</p>
+<p>对我在公司影响比较大的大神，好像也是最近结婚，需要打听一下，祝贺一下。<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/05/03/周围的朋友都开始结婚了/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/杂/">杂</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/05/03/周围的朋友都开始结婚了/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/05/02/圈子理论/" title="圈子理论" itemprop="url">圈子理论</a>
   </h1>
   <p class="article-author">By
@@ -665,68 +731,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" title="关于文件的UTF-8的BOM标记问题记录" itemprop="url">关于文件的UTF-8的BOM标记问题记录</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T10:23:39.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>在svn上提交了一个文件trac进行codereview 的时候，发现其中的中文是乱码，猜测是文件编码的问题，用emedit查看之后，发现这个文件的编码时utf-8 （无bom）格式，然后对比了一下其它显示正确的文件格式：utf-8（含bom），问题就是bom有无的问题，使用emedit保存完后，调查了一下这个bom是什么.</p>
-<p>“UTF- 8编码的文件中，BOM占三个字节。如果用记事本把一个文本文件另存为UTF-8编码方式的话，用UE打开这个文件，切换到十六进制编辑状态就可以看到开 头的FFFE了。这是个标识UTF-8编码文件的好办法，软件通过BOM来识别这个文件是否是UTF-8编码，很多软件还要求读入的文件必须带BOM。可 是，还是有很多软件不能识别BOM。”</p>
-<p>“UTF-8 BOM又叫UTF-8 签名,其实UTF-8的BOM对UFT-8没有作用,是为了支援UTF-16,UTF-32才加上”</p>
-<p>才发现这个bom在utf-8格式的文件中代表了头三个字节“EF BB BF”，很多文件就没有这个概念，经常会被当做数据进行处理。php好像暂时不支持，不能处理带bom的utf-8文件。</p>
-<p>所以说，数据文件最好不要带bom，当然你如果知道bom，处理程序中做了处理那就是另一说了。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
-</div>
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/4/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next<span></span></a>
@@ -761,7 +765,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>35</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>36</sup></a></li>
 		  
 		
 		</ul>
@@ -787,6 +791,10 @@
 		
 			
 				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/成长/" title="成长">成长<sup>2</sup></a></li>
 			
 		
 			
@@ -830,10 +838,6 @@
 			
 		
 			
-				<li><a href="/tags/成长/" title="成长">成长<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>1</sup></a></li>
 			
 		
@@ -842,11 +846,11 @@
 			
 		
 			
-				<li><a href="/tags/鸡汤/" title="鸡汤">鸡汤<sup>1</sup></a></li>
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/道/" title="道">道<sup>1</sup></a></li>
+				<li><a href="/tags/鸡汤/" title="鸡汤">鸡汤<sup>1</sup></a></li>
 			
 		
 			
