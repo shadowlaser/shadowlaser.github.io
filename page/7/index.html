@@ -78,6 +78,141 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" title="asp.net调用xps对象GetFixedDocumentSequence出现异常" itemprop="url">asp.net调用xps对象GetFixedDocumentSequence出现异常</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T09:51:22.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>昨天在web端调用别人写的word处理dll时，出现了如下错误:</p>
+<p><code>The invocation of the constructor on type &#39;System.Windows.Documents.DocumentReference&#39; that matches the specified binding constraints threw an exception.&#39; Line number &#39;2&#39; and line position &#39;21&#39;.</code></p>
+<p>于是写了一个cs端程序进行问题确认，测试程序可以正常执行，这块可以排除代码逻辑的问题，有可能是环境或者其它方面考虑不足。</p>
+<p>同事指出可以查看详细的异常信息：在抛出异常的地方找到的innerexception是sta的问题，这个具体没有把信息保留下来.<br>根据innerexception的提示，发现了xps对象和其中的方法是STA的，但是aspx页面是MTA，经过几番周折找到遇到一样问题的人，链接如下:</p>
+<p><a href="http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net" target="_blank" rel="external">http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net</a></p>
+<p>问题真的是一样的，然后按照里面提供的链接(第二个)添加<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="variable">%@</span> Page Language=<span class="string">"C#"</span> AspCompat=<span class="string">"true"</span> <span class="variable">%&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用的地方</span></span><br><span class="line">System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span> <span class="keyword">thread</span> <span class="subst">=</span></span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span>(</span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span>ParameterizedThreadStart(ThreadMethod));</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span>Start(value);</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span><span class="keyword">Join</span>();<span class="comment">//等待结束</span></span><br><span class="line"><span class="comment">//线程函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="literal">void</span> ThreadMethod(object parameter)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//这里写的就是对xps处理的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结:">总结:</h1><pre><code><span class="bullet">1. </span>STA、MTA的概念需要熟悉，其它的线程，线程同步，线程池等概念需要再巩固一下了。
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/23/执行力有多重要/" title="执行力有多重要" itemprop="url">执行力有多重要</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T09:46:46.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>最近自己被现状困扰着，自己不慢现在的生活，但是自己却没有能力或者机会做出改变，和很多人一样过的浑浑噩噩，这个经过自己的深入思考，发现是执行力这块出的问题.</p>
+<p>从小学到大学，你的执行力有多强，那么你的学校和班级的排名就可以看出来，很多非常普通大学的大学生抱怨着，为什么你们公司只找211或者985的，我也有能力等等的话语，这个其实就是自己没有能力达到非常好level.其实可以好好想想，为什么别人能考生211或者985，自己觉得自己比较聪明相比较一部分的好大学的学生，这就是个人自制能力的差异了，别人可能没有你那么聪明，但别人的善于总结方法、多练习，而你呢？觉得自己聪明，不进行复习、练习、或者根本坐不住，这也就不奇怪了。</p>
+<p>特别是工作后，越发感觉到自己的执行力差，但是自己形成多年的习惯一次又一次的打败了，很苦恼。</p>
+<p>还有另一种的事是，我们总想做着做那的，想法太多，为什么没有做到呢?因为你这么多想法根本没有进行思考或者说深入的思考，你可以回想一下自己“想出去旅游”等，为什么没有成行呢?因为你只想到了“我想出去旅游”，至于其他的一概没有思考，所以呢，大脑就不接受这个想法，你也没有成行的内在理由了。</p>
+<p>执行力，需要进行强制改变，开始的时候肯定困难重重，但不能因为有困难就给自己找理由，说起理由，人们都习惯给自己找理由说服自己接受或者拒绝很多事情，特别是拖延的理由，放弃的理由。</p>
+<p>养成一个习惯21天，那么就坚持21天，不给自己找任何理由来拖延或者放弃某些事情，现在的目标只有一个，执行力养成.<br>执行力养成之后，其它任何想法都是在它的基础上来的.有了坚实的地基，你还怕楼盖不高吗？</p>
+<p>一万个想法，如果没有行动，那么就毫无意义，一个想法行动了，那么它的价值就是100%。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/生活/">生活</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/执行力有多重要/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/23/C-查询数据库时问题-Min-1-must-be-less-than-or-equal-to-max-1-in-Range-object/" title="C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object" itemprop="url">C#查询数据库时问题: Min(1) must be less than or equal to max(-1) in Range object</a>
   </h1>
   <p class="article-author">By
@@ -500,7 +635,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>36</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>38</sup></a></li>
 		  
 		
 		</ul>
@@ -525,11 +660,11 @@
 			
 		
 			
-				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
+				<li><a href="/tags/成长/" title="成长">成长<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/成长/" title="成长">成长<sup>2</sup></a></li>
+				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
 			
 		
 			

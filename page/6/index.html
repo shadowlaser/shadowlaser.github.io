@@ -78,6 +78,140 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/" title=".net 中 GridViewRow使用字段名来访问数据，而不是使用索引" itemprop="url">.net 中 GridViewRow使用字段名来访问数据，而不是使用索引</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T10:26:30.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>在行绑定事件中，项目中很多的字段都对某些字段进行处理，而且这个函数写的挺长，上次就是因为加新功能，多替换了几个以所以为标记进行操作的代码，导致了一个很严重的bug。</p>
+<p>数字索引真的不明显，容易搞错，于是开始思考有什么好的办法，来避免使用数字索引，微软的东西应该自带了，终于让我找到了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">DataView</span> dv = e.row.dataitem <span class="keyword">as</span> <span class="built_in">DataView</span>;</span><br><span class="line">dv[<span class="string">"字段1"</span>] = <span class="string">"字段1的值"</span>;<span class="comment">//赋值</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码可读性瞬间上升，比e.row.cells[1]的写法好多了。<br>虽然上面的代码可以获取值和设置值，但是上面的代码不能获取gridview中的控件。</p>
+<h2 id="思考：">思考：</h2><pre><code>怎么在不使用数字索引的情况下，获取gridview绑定的控件。（e<span class="class">.row</span><span class="class">.cells</span>[<span class="number">1</span>]<span class="class">.findcontrols</span>[<span class="string">"控件1"</span>]，怎么去掉索引<span class="number">1</span>？）
+</code></pre><p> 使用e.row.findcontrols[“控件1”]就可以了</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/net-中-GridViewRow使用字段名来访问数据，而不是使用索引/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" title="jquery 插件tablepnp拖动刷新gridview问题" itemprop="url">jquery 插件tablepnp拖动刷新gridview问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T10:25:28.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>今天调查了一个gridview的行刷新的问题。</p>
+<p>使用了ajax进行行的移动操作，当然使用的是jquery的tablepnp插件，还有一个功能就是层级折叠问题，这个使用的viewstate保存的，于是出现了一个这么的问题：<br>当gridview的行移动之后，然后点击与先前位置改变的带层级的行时，层级关联的几行确实被折叠了，但是，行有恢复了没有移动时的索引位置。</p>
+<p>经过半天的调查，在移动行时，发现ajax在请求页面的时候，页面保存的viewstate是没有值的，间接证明了ajax是请求一个完全的新页面，而后进行折叠或者展开，读取页面是可以读到之前的viewstate的，但是读取的行的索引（一个按钮的commandargument参数）是之前在刚一进页面的索引，所以ajax请求的页面和本页的状态都是没有关系的，且在行移动后，页面没有刷新绑定。</p>
+<p>结论：<br>ajax发送的请求页面和本页面刷新的页面状态是隔离的。</p>
+<p>找到问题，就好解决了，在ajax请求完成后，使用window.top.location.href=window.location.href从新请求一次页面就可以绑定新的索引值了。这个时候viewstate已经读取不到了，所以需要借用其它的方法。<br>例如session。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a><a href="/tags/jquery/">jquery</a><a href="/tags/js/">js</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" title="关于文件的UTF-8的BOM标记问题记录" itemprop="url">关于文件的UTF-8的BOM标记问题记录</a>
   </h1>
   <p class="article-author">By
@@ -623,141 +757,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" title="asp.net调用xps对象GetFixedDocumentSequence出现异常" itemprop="url">asp.net调用xps对象GetFixedDocumentSequence出现异常</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T09:51:22.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>昨天在web端调用别人写的word处理dll时，出现了如下错误:</p>
-<p><code>The invocation of the constructor on type &#39;System.Windows.Documents.DocumentReference&#39; that matches the specified binding constraints threw an exception.&#39; Line number &#39;2&#39; and line position &#39;21&#39;.</code></p>
-<p>于是写了一个cs端程序进行问题确认，测试程序可以正常执行，这块可以排除代码逻辑的问题，有可能是环境或者其它方面考虑不足。</p>
-<p>同事指出可以查看详细的异常信息：在抛出异常的地方找到的innerexception是sta的问题，这个具体没有把信息保留下来.<br>根据innerexception的提示，发现了xps对象和其中的方法是STA的，但是aspx页面是MTA，经过几番周折找到遇到一样问题的人，链接如下:</p>
-<p><a href="http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net" target="_blank" rel="external">http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net</a></p>
-<p>问题真的是一样的，然后按照里面提供的链接(第二个)添加<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="variable">%@</span> Page Language=<span class="string">"C#"</span> AspCompat=<span class="string">"true"</span> <span class="variable">%&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用的地方</span></span><br><span class="line">System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span> <span class="keyword">thread</span> <span class="subst">=</span></span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span>(</span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span>ParameterizedThreadStart(ThreadMethod));</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span>Start(value);</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span><span class="keyword">Join</span>();<span class="comment">//等待结束</span></span><br><span class="line"><span class="comment">//线程函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="literal">void</span> ThreadMethod(object parameter)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//这里写的就是对xps处理的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结:">总结:</h1><pre><code><span class="bullet">1. </span>STA、MTA的概念需要熟悉，其它的线程，线程同步，线程池等概念需要再巩固一下了。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/asp-net/">asp.net</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/执行力有多重要/" title="执行力有多重要" itemprop="url">执行力有多重要</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T09:46:46.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>最近自己被现状困扰着，自己不慢现在的生活，但是自己却没有能力或者机会做出改变，和很多人一样过的浑浑噩噩，这个经过自己的深入思考，发现是执行力这块出的问题.</p>
-<p>从小学到大学，你的执行力有多强，那么你的学校和班级的排名就可以看出来，很多非常普通大学的大学生抱怨着，为什么你们公司只找211或者985的，我也有能力等等的话语，这个其实就是自己没有能力达到非常好level.其实可以好好想想，为什么别人能考生211或者985，自己觉得自己比较聪明相比较一部分的好大学的学生，这就是个人自制能力的差异了，别人可能没有你那么聪明，但别人的善于总结方法、多练习，而你呢？觉得自己聪明，不进行复习、练习、或者根本坐不住，这也就不奇怪了。</p>
-<p>特别是工作后，越发感觉到自己的执行力差，但是自己形成多年的习惯一次又一次的打败了，很苦恼。</p>
-<p>还有另一种的事是，我们总想做着做那的，想法太多，为什么没有做到呢?因为你这么多想法根本没有进行思考或者说深入的思考，你可以回想一下自己“想出去旅游”等，为什么没有成行呢?因为你只想到了“我想出去旅游”，至于其他的一概没有思考，所以呢，大脑就不接受这个想法，你也没有成行的内在理由了。</p>
-<p>执行力，需要进行强制改变，开始的时候肯定困难重重，但不能因为有困难就给自己找理由，说起理由，人们都习惯给自己找理由说服自己接受或者拒绝很多事情，特别是拖延的理由，放弃的理由。</p>
-<p>养成一个习惯21天，那么就坚持21天，不给自己找任何理由来拖延或者放弃某些事情，现在的目标只有一个，执行力养成.<br>执行力养成之后，其它任何想法都是在它的基础上来的.有了坚实的地基，你还怕楼盖不高吗？</p>
-<p>一万个想法，如果没有行动，那么就毫无意义，一个想法行动了，那么它的价值就是100%。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/生活/">生活</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/执行力有多重要/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/5/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next<span></span></a>
@@ -792,7 +791,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>36</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>38</sup></a></li>
 		  
 		
 		</ul>
@@ -817,11 +816,11 @@
 			
 		
 			
-				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
+				<li><a href="/tags/成长/" title="成长">成长<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/成长/" title="成长">成长<sup>2</sup></a></li>
+				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
 			
 		
 			
