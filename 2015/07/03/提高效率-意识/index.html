@@ -4,25 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>asp.net调用xps对象GetFixedDocumentSequence出现异常 | Shadowlaser&#39; Blog</title>
+    <title>提高效率--意识 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+    <meta name="description" content="在以前选择做事的时候，一直都是开始做，然后做着做着就知道自己哪块方法有问题或者方向错误，这个是之前的效率低的原因，也是由于生活惯性一直这么思考的，从来没有想过为什么要这么做，为什么不找其他的方法呢等等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="asp.net调用xps对象GetFixedDocumentSequence出现异常">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/index.html">
+<meta property="og:title" content="提高效率--意识">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/07/03/提高效率-意识/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+<meta property="og:description" content="在以前选择做事的时候，一直都是开始做，然后做着做着就知道自己哪块方法有问题或者方向错误，这个是之前的效率低的原因，也是由于生活惯性一直这么思考的，从来没有想过为什么要这么做，为什么不找其他的方法呢等等。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="asp.net调用xps对象GetFixedDocumentSequence出现异常">
-<meta name="twitter:description" content="昨天在web端调用别人写的word处理dll时，出现了如下错误:
-The invocation of the constructor on type &amp;#39;System.Windows.Documents.DocumentReference&amp;#39; that matches the specified binding constraints threw an exception.&amp;#39;">
+<meta name="twitter:title" content="提高效率--意识">
+<meta name="twitter:description" content="在以前选择做事的时候，一直都是开始做，然后做着做着就知道自己哪块方法有问题或者方向错误，这个是之前的效率低的原因，也是由于生活惯性一直这么思考的，从来没有想过为什么要这么做，为什么不找其他的方法呢等等。">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -79,14 +76,14 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" title="asp.net调用xps对象GetFixedDocumentSequence出现异常" itemprop="url">asp.net调用xps对象GetFixedDocumentSequence出现异常</a>
+      <a href="/2015/07/03/提高效率-意识/" title="提高效率--意识" itemprop="url">提高效率--意识</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T09:51:22.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-07-03T14:01:45.000Z" itemprop="datePublished"> 发表于 2015-07-03</time>
     
   </p>
 </header>
@@ -95,33 +92,40 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结:"><span class="toc-number">1.</span> <span class="toc-text">总结:</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么会不思考就直接做的思想"><span class="toc-number">2.</span> <span class="toc-text">为什么会不思考就直接做的思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么做才能形成自己期望的行为习惯？"><span class="toc-number">3.</span> <span class="toc-text">怎么做才能形成自己期望的行为习惯？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
 		
 		</div>
 		
-		<p>昨天在web端调用别人写的word处理dll时，出现了如下错误:</p>
-<p><code>The invocation of the constructor on type &#39;System.Windows.Documents.DocumentReference&#39; that matches the specified binding constraints threw an exception.&#39; Line number &#39;2&#39; and line position &#39;21&#39;.</code></p>
-<p>于是写了一个cs端程序进行问题确认，测试程序可以正常执行，这块可以排除代码逻辑的问题，有可能是环境或者其它方面考虑不足。</p>
-<p>同事指出可以查看详细的异常信息：在抛出异常的地方找到的innerexception是sta的问题，这个具体没有把信息保留下来.<br>根据innerexception的提示，发现了xps对象和其中的方法是STA的，但是aspx页面是MTA，经过几番周折找到遇到一样问题的人，链接如下:</p>
-<p><a href="http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net" target="_blank" rel="external">http://stackoverflow.com/questions/24058070/how-to-read-a-xps-file-in-c-sharp-using-asp-net</a></p>
-<p>问题真的是一样的，然后按照里面提供的链接(第二个)添加<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="variable">%@</span> Page Language=<span class="string">"C#"</span> AspCompat=<span class="string">"true"</span> <span class="variable">%&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>经过测试，上面的代码是没有用，由于.httphandler 自己还不熟，于是写了一个线程来调用出力xps文档的那个方法，于是成功搞定，代码示例如下:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用的地方</span></span><br><span class="line">System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span> <span class="keyword">thread</span> <span class="subst">=</span></span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span><span class="keyword">Thread</span>(</span><br><span class="line">               <span class="literal">new</span> System<span class="built_in">.</span>Threading<span class="built_in">.</span>ParameterizedThreadStart(ThreadMethod));</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span>Start(value);</span><br><span class="line">            <span class="keyword">thread</span><span class="built_in">.</span><span class="keyword">Join</span>();<span class="comment">//等待结束</span></span><br><span class="line"><span class="comment">//线程函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="literal">void</span> ThreadMethod(object parameter)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//这里写的就是对xps处理的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结:">总结:</h1><pre><code><span class="bullet">1. </span>STA、MTA的概念需要熟悉，其它的线程，线程同步，线程池等概念需要再巩固一下了。
-</code></pre>  
+		<pre><code>在以前选择做事的时候，一直都是开始做，然后做着做着就知道自己哪块方法有问题或者方向错误，这个是之前的效率低的原因，也是由于生活惯性一直这么思考的，从来没有想过为什么要这么做，为什么不找其他的方法呢等等。
+</code></pre><a id="more"></a>
+<h3 id="目标">目标</h3><p>节省自己的时间成本，提高做事的效率是最近一直在干的事，这个事情做起来非常的棒，打破了自己以前的非常多的不好的习惯，比如思维惯性等等，让自己越来越往想象的方向发展。</p>
+<h3 id="为什么会不思考就直接做的思想">为什么会不思考就直接做的思想</h3><p>这个需要从成长环境来说，成长的环境中并没有有心人进行往这方面引导，基于以前的生活经验靠生活的惯性进行做事情，虽然出不了什么创新的东西，但是内心但求无过，无为的表现，所以一直自己内心就默认了这些行为模式。</p>
+<p>在现在，充分认识到时间的重要性，所以环境进行逼迫，使得自己必须思考效率的事情，不光在已经做得事情上思考，并且需要在遇到新的事情时也必须考虑到效率。</p>
+<h3 id="怎么做才能形成自己期望的行为习惯？">怎么做才能形成自己期望的行为习惯？</h3><ol>
+<li>对于正在做得事进行反省，每天不断的反省，这样的话保证了自己需要做的事情能进行思考到高效的做法。</li>
+<li>对于新的事情，需要在做之前进行思考，也就是考虑到会遇到的问题或者有没有已经现成的方法存在了，能进行高效的处理这件事。</li>
+</ol>
+<p>对于第二点，这个就归结到先知先觉，当知当觉，后知后觉的方向上了，对于提升到这个层面的方法，自己总结了一下：</p>
+<ol>
+<li>提醒，通过每隔一段时间提醒一次自己，让自己形成条件反射，能意识到自己有这么提醒，直到自己在事情发生之前进行先知先觉的处理。</li>
+<li>在自己意识到了之后，需要制定思考的方式，例如该怎么做？或者应该用什么方法处理遇到的这些事。</li>
+</ol>
+<p>以上就是自己建立的意识培养的一个子模块，保证了自己有那种后知后觉的意识的时候能在短期内达到先知先觉。</p>
+<h3 id="总结">总结</h3><p>反省的过程是不断剖析自己的过程，需要认识到自己的不足，承认自己不完美，这样才能更好的找到高效的方法。<br>（完）</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/asp-net/">asp.net</a>
+  <span></span> <a href="/tags/意识/">意识</a>
   </div>
 
 </div>
@@ -130,7 +134,7 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/asp-net调用xps对象GetFixedDocumentSequence出现异常/" data-title="asp.net调用xps对象GetFixedDocumentSequence出现异常 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/07/03/提高效率-意识/" data-title="提高效率--意识 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -143,19 +147,11 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/net-中已经引用了dll-但是编译报错找不到类型或者命名空间/" title=".net 中已经引用了dll,但是编译报错找不到类型或者命名空间">
-  <strong>上一篇：</strong><br/>
-  <span>
-  .net 中已经引用了dll,但是编译报错找不到类型或者命名空间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/执行力有多重要/"  title="执行力有多重要">
+<a href="/2015/07/02/关注圈与影响圈/"  title="关注圈与影响圈">
  <strong>下一篇：</strong><br/> 
- <span>执行力有多重要
+ <span>关注圈与影响圈
 </span>
 </a>
 </div>
@@ -176,7 +172,7 @@ The invocation of the constructor on type &amp;#39;System.Windows.Documents.Docu
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结:"><span class="toc-number">1.</span> <span class="toc-text">总结:</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-number">1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么会不思考就直接做的思想"><span class="toc-number">2.</span> <span class="toc-text">为什么会不思考就直接做的思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么做才能形成自己期望的行为习惯？"><span class="toc-number">3.</span> <span class="toc-text">怎么做才能形成自己期望的行为习惯？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
  
   </div>
 
