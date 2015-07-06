@@ -78,6 +78,73 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/" title="jquery 插件tablepnp拖动刷新gridview问题" itemprop="url">jquery 插件tablepnp拖动刷新gridview问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-23T10:25:28.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>今天调查了一个gridview的行刷新的问题。</p>
+<p>使用了ajax进行行的移动操作，当然使用的是jquery的tablepnp插件，还有一个功能就是层级折叠问题，这个使用的viewstate保存的，于是出现了一个这么的问题：<br>当gridview的行移动之后，然后点击与先前位置改变的带层级的行时，层级关联的几行确实被折叠了，但是，行有恢复了没有移动时的索引位置。</p>
+<p>经过半天的调查，在移动行时，发现ajax在请求页面的时候，页面保存的viewstate是没有值的，间接证明了ajax是请求一个完全的新页面，而后进行折叠或者展开，读取页面是可以读到之前的viewstate的，但是读取的行的索引（一个按钮的commandargument参数）是之前在刚一进页面的索引，所以ajax请求的页面和本页的状态都是没有关系的，且在行移动后，页面没有刷新绑定。</p>
+<p>结论：<br>ajax发送的请求页面和本页面刷新的页面状态是隔离的。</p>
+<p>找到问题，就好解决了，在ajax请求完成后，使用window.top.location.href=window.location.href从新请求一次页面就可以绑定新的索引值了。这个时候viewstate已经读取不到了，所以需要借用其它的方法。<br>例如session。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/asp-net/">asp.net</a><a href="/tags/jquery/">jquery</a><a href="/tags/js/">js</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/04/23/jquery-插件tablepnp拖动刷新gridview问题/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/04/23/关于文件的UTF-8的BOM标记问题记录/" title="关于文件的UTF-8的BOM标记问题记录" itemprop="url">关于文件的UTF-8的BOM标记问题记录</a>
   </h1>
   <p class="article-author">By
@@ -694,70 +761,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/23/执行力有多重要/" title="执行力有多重要" itemprop="url">执行力有多重要</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-23T09:46:46.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>最近自己被现状困扰着，自己不慢现在的生活，但是自己却没有能力或者机会做出改变，和很多人一样过的浑浑噩噩，这个经过自己的深入思考，发现是执行力这块出的问题.</p>
-<p>从小学到大学，你的执行力有多强，那么你的学校和班级的排名就可以看出来，很多非常普通大学的大学生抱怨着，为什么你们公司只找211或者985的，我也有能力等等的话语，这个其实就是自己没有能力达到非常好level.其实可以好好想想，为什么别人能考生211或者985，自己觉得自己比较聪明相比较一部分的好大学的学生，这就是个人自制能力的差异了，别人可能没有你那么聪明，但别人的善于总结方法、多练习，而你呢？觉得自己聪明，不进行复习、练习、或者根本坐不住，这也就不奇怪了。</p>
-<p>特别是工作后，越发感觉到自己的执行力差，但是自己形成多年的习惯一次又一次的打败了，很苦恼。</p>
-<p>还有另一种的事是，我们总想做着做那的，想法太多，为什么没有做到呢?因为你这么多想法根本没有进行思考或者说深入的思考，你可以回想一下自己“想出去旅游”等，为什么没有成行呢?因为你只想到了“我想出去旅游”，至于其他的一概没有思考，所以呢，大脑就不接受这个想法，你也没有成行的内在理由了。</p>
-<p>执行力，需要进行强制改变，开始的时候肯定困难重重，但不能因为有困难就给自己找理由，说起理由，人们都习惯给自己找理由说服自己接受或者拒绝很多事情，特别是拖延的理由，放弃的理由。</p>
-<p>养成一个习惯21天，那么就坚持21天，不给自己找任何理由来拖延或者放弃某些事情，现在的目标只有一个，执行力养成.<br>执行力养成之后，其它任何想法都是在它的基础上来的.有了坚实的地基，你还怕楼盖不高吗？</p>
-<p>一万个想法，如果没有行动，那么就毫无意义，一个想法行动了，那么它的价值就是100%。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/生活/">生活</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/23/执行力有多重要/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/6/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next<span></span></a>
@@ -792,7 +795,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>46</sup></a></li>
+			<li><a href="/categories/生活/" title="生活">生活<sup>47</sup></a></li>
 		  
 		
 		</ul>
@@ -805,7 +808,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>18</sup></a></li>
+				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>19</sup></a></li>
 			
 		
 			
@@ -821,19 +824,19 @@
 			
 		
 			
-				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
+				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>3</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/意识/" title="意识">意识<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
 			
 		
 			

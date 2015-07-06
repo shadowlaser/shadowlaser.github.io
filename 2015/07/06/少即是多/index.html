@@ -4,34 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>转换字符串--站在巨人肩膀上思考 | Shadowlaser&#39; Blog</title>
+    <title>少即是多 | Shadowlaser&#39; Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="shadowlaser">
     
 
     
-    <meta name="description" content="项目中使用js进行数据前台的显示，遇到一个问题和解决方法，对解决方法进行思考。
-后台传数据给js，js负责把得到的数据放到img标签的title中，这时问题出现了，后台的数据又特殊字符&amp;XXXX;（“·”），这样在title中显示的时候就成为了的字符了
-
-于是就开始搜索怎么使用js把&amp;XXXX;转换为“·”，找了很多文章写的都不是很好，写了自己一套的js转义函数进行转义，这个问题没有这么复杂。
-开">
+    <meta name="description" content="少即是多，这是最近自己在建立个人管理系统的时候总结了一下自己所犯的错误的出来的结论。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="转换字符串--站在巨人肩膀上思考">
-<meta property="og:url" content="http://shadowlaser.github.io/2015/04/23/转换字符串-站在巨人肩膀上思考/index.html">
+<meta property="og:title" content="少即是多">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/07/06/少即是多/index.html">
 <meta property="og:site_name" content="Shadowlaser' Blog">
-<meta property="og:description" content="项目中使用js进行数据前台的显示，遇到一个问题和解决方法，对解决方法进行思考。
-后台传数据给js，js负责把得到的数据放到img标签的title中，这时问题出现了，后台的数据又特殊字符&amp;XXXX;（“·”），这样在title中显示的时候就成为了的字符了
-
-于是就开始搜索怎么使用js把&amp;XXXX;转换为“·”，找了很多文章写的都不是很好，写了自己一套的js转义函数进行转义，这个问题没有这么复杂。
-开">
+<meta property="og:description" content="少即是多，这是最近自己在建立个人管理系统的时候总结了一下自己所犯的错误的出来的结论。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="转换字符串--站在巨人肩膀上思考">
-<meta name="twitter:description" content="项目中使用js进行数据前台的显示，遇到一个问题和解决方法，对解决方法进行思考。
-后台传数据给js，js负责把得到的数据放到img标签的title中，这时问题出现了，后台的数据又特殊字符&amp;XXXX;（“·”），这样在title中显示的时候就成为了的字符了
-
-于是就开始搜索怎么使用js把&amp;XXXX;转换为“·”，找了很多文章写的都不是很好，写了自己一套的js转义函数进行转义，这个问题没有这么复杂。
-开">
+<meta name="twitter:title" content="少即是多">
+<meta name="twitter:description" content="少即是多，这是最近自己在建立个人管理系统的时候总结了一下自己所犯的错误的出来的结论。">
 
     
     <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
@@ -88,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/23/转换字符串-站在巨人肩膀上思考/" title="转换字符串--站在巨人肩膀上思考" itemprop="url">转换字符串--站在巨人肩膀上思考</a>
+      <a href="/2015/07/06/少即是多/" title="少即是多" itemprop="url">少即是多</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-23T10:11:58.000Z" itemprop="datePublished"> 发表于 2015-04-23</time>
+    <time datetime="2015-07-06T12:39:43.000Z" itemprop="datePublished"> 发表于 2015-07-06</time>
     
   </p>
 </header>
@@ -104,32 +92,30 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结："><span class="toc-number">1.</span> <span class="toc-text">总结：</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目的"><span class="toc-number">1.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么少即是多"><span class="toc-number">2.</span> <span class="toc-text">为什么少即是多</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么做？"><span class="toc-number">3.</span> <span class="toc-text">怎么做？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
 		
 		</div>
 		
-		<p>项目中使用js进行数据前台的显示，遇到一个问题和解决方法，对解决方法进行思考。</p>
-<p>后台传数据给js，js负责把得到的数据放到img标签的title中，这时问题出现了，后台的数据又特殊字符&XXXX;（“·”），这样在title中显示的时候就成为了的字符了</p>
-<ol>
-<li>于是就开始搜索怎么使用js把&XXXX;转换为“·”，找了很多文章写的都不是很好，写了自己一套的js转义函数进行转义，这个问题没有这么复杂。</li>
-<li>开始思考jquery有什么好的方法，没有找到，于是放弃。</li>
-<li>html的显示文字时会自动转义为显示的字符，那么让html自己替我转一下，然后再获取内容不久好了？于是使用jquery把需要转义的字符串填写到这个标签的html方法内，然后再取出来，取出来的字符串已经被转义过了。</li>
-</ol>
-<h1 id="总结：">总结：</h1><pre><code>善于利用已经存在的事物来解决遇到的问题，寻找到最简单的方法。
-</code></pre>  
+		<pre><code>少即是多，这是最近自己在建立个人管理系统的时候总结了一下自己所犯的错误的出来的结论。
+</code></pre><a id="more"></a>
+<h3 id="目的">目的</h3><p>使得自己清楚自己的定位，了解到一口气吃不成个胖子。</p>
+<h3 id="为什么少即是多">为什么少即是多</h3><p>再多没有完成，很少却都完成了，那么就是少即是多。</p>
+<h3 id="怎么做？">怎么做？</h3><p>把自己的事情排个顺序让自己知道先做什么，后做什么。</p>
+<h3 id="总结">总结</h3><p>计划和目标系统重新建立觉得时间和计划上需要进行调整的比较多。<br>(完)</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/技术/">技术</a>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/js/">js</a>
+  <span></span> <a href="/tags/个人成长/">个人成长</a>
   </div>
 
 </div>
@@ -138,7 +124,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://shadowlaser.github.io/2015/04/23/转换字符串-站在巨人肩膀上思考/" data-title="转换字符串--站在巨人肩膀上思考 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  <div data-url="http://shadowlaser.github.io/2015/07/06/少即是多/" data-title="少即是多 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -151,19 +137,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/23/团队建设思考/" title="团队建设思考">
-  <strong>上一篇：</strong><br/>
-  <span>
-  团队建设思考</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/23/sql-一条记录多次操作（分隔符或者其它处理）-替换游标/"  title="sql 一条记录多次操作（分隔符或者其它处理）--替换游标">
+<a href="/2015/07/05/建立个人管理系统初步（3）/"  title="建立个人管理系统初步（3）--反思崩溃">
  <strong>下一篇：</strong><br/> 
- <span>sql 一条记录多次操作（分隔符或者其它处理）--替换游标
+ <span>建立个人管理系统初步（3）--反思崩溃
 </span>
 </a>
 </div>
@@ -184,7 +162,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结："><span class="toc-number">1.</span> <span class="toc-text">总结：</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目的"><span class="toc-number">1.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么少即是多"><span class="toc-number">2.</span> <span class="toc-text">为什么少即是多</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么做？"><span class="toc-number">3.</span> <span class="toc-text">怎么做？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
  
   </div>
 
