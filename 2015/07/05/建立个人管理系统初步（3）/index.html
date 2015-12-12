@@ -1,0 +1,616 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>建立个人管理系统初步（3）--反思崩溃 | Shadowlaser&#39; Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="shadowlaser">
+    
+
+    
+    <meta name="description" content="在这些日子里终于遇到个人管理系统的完全奔溃了，这个已经是预想到的事情，不过稍微有点晚才发现，真是不可思议，在不断的意志消耗中，最终现在才完全发现整体上已经奔溃，部分系统还是在运转，并且还有新的系统在不断完善.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建立个人管理系统初步（3）--反思崩溃">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/07/05/建立个人管理系统初步（3）/index.html">
+<meta property="og:site_name" content="Shadowlaser' Blog">
+<meta property="og:description" content="在这些日子里终于遇到个人管理系统的完全奔溃了，这个已经是预想到的事情，不过稍微有点晚才发现，真是不可思议，在不断的意志消耗中，最终现在才完全发现整体上已经奔溃，部分系统还是在运转，并且还有新的系统在不断完善.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="建立个人管理系统初步（3）--反思崩溃">
+<meta name="twitter:description" content="在这些日子里终于遇到个人管理系统的完全奔溃了，这个已经是预想到的事情，不过稍微有点晚才发现，真是不可思议，在不断的意志消耗中，最终现在才完全发现整体上已经奔溃，部分系统还是在运转，并且还有新的系统在不断完善.">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Shadowlaser&#39; Blog">Shadowlaser&#39; Blog</a></h1>
+				<h2 class="blog-motto">一个.net软件工程师，致力于做一个有思想、有创新能力的软件工程师，奔跑吧！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/categories">Categories</a></li>
+					
+						<li><a href="/tags">Tags</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:shadowlaser.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/05/建立个人管理系统初步（3）/" title="建立个人管理系统初步（3）--反思崩溃" itemprop="url">建立个人管理系统初步（3）--反思崩溃</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-05T13:24:30.000Z" itemprop="datePublished"> 发表于 2015-07-05</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目的"><span class="toc-number">1.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么会崩溃"><span class="toc-number">2.</span> <span class="toc-text">为什么会崩溃</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么再次建立"><span class="toc-number">3.</span> <span class="toc-text">　怎么再次建立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+		
+		</div>
+		
+		<pre><code>在这些日子里终于遇到个人管理系统的完全奔溃了，这个已经是预想到的事情，不过稍微有点晚才发现，真是不可思议，在不断的意志消耗中，最终现在才完全发现整体上已经奔溃，部分系统还是在运转，并且还有新的系统在不断完善.
+</code></pre><a id="more"></a>
+<h3 id="目的">目的</h3><p>今天写这篇文章的目的就是为了寻找出在这个奔溃的期间出现了哪些原因，使得系统运转失败的，又是哪些原因其它小系统的可以不受影响的运行。</p>
+<p>最终找到合适的方式进行重新建立，使其更稳定高效的进行。</p>
+<p>下来准备从做的好坏的事件中进行原因的寻找。</p>
+<h3 id="为什么会崩溃">为什么会崩溃</h3><p>以下是系统失败的事件：</p>
+<ol>
+<li>英语单词的学习最终没有完全执行起来。</li>
+<li>计划和目标管理一直都没有更新。</li>
+<li>买了《小强升职记》确迟迟没有进行实施。</li>
+<li>没有按照计划列表进行实施。</li>
+</ol>
+<p>做的好的事件：</p>
+<ol>
+<li>python的教程看到90%了</li>
+<li>博客除了出差外没有进行中断。</li>
+<li>反省的笔记越来越有条理了。</li>
+<li>习惯养成、回顾系统初步建立。</li>
+</ol>
+<p>先说那些失败的事件，一条一条开始看：<br>首先，背单词的时间在自己从周一到周日早上增加了锻炼的时间后，被挤掉了并且，早上的吃饭时间把近期的读书时间也挤掉了，还有自己内心还是有恐惧感，没有任何掌控的感觉。<br>其次，计划和目标没有更新总觉得自己只是为了完成任务，并且从第一周开始后发现时间完全和自己的对不上，自己不能完成计划导致了产生挫败感，逃避了计划列表。<br>再者，买了书之后，自己觉得自己并没有强烈的愿望去建立这个系统，并且自己需要阅读的书籍很多，这个就不想在费很多时间进行处理了。<br>最后，自律能力再计划列表不执行之后，已经没有心思进行严格执行了。</p>
+<p>好，综上可以找到几个失败的原因了：</p>
+<ol>
+<li>时间安排不合理</li>
+<li>计划不合理</li>
+<li>没有强烈的意愿（重要）、任务太多了，任务没有主次优先级</li>
+<li>自律能力没有合理的计划支撑，导致了难度阶梯增长。</li>
+</ol>
+<p>再分析一下做的好的地方为什么坚持下去了：<br>首先，这个没有觉得很困难，没有在思考这个有没有用，所以就学习了Python，自己当时想到了学习之后可以进入互联网行业。<br>其次，博客这件事是一件简单的事，自己非常清晰的记得这个目标，自己觉得这个是对自己意志力的挑战，花费的时间不是很长，有固定时间做这件事，并且自己每天看着目标与自己的距离越来越小，很兴奋有动力干下去。<br>再者，以前的反省笔记有条理，自己在写了一段时间后，发现自己的反省笔记没有效果就思考怎么做有效果，所以之后就进行了改进，并且感觉确实不一样了，再者有固定的时间完成这件事。<br>最后，自己在不断的反省中发现了反省和回顾的重要性，特别是在阅读技术书籍的时候分析了艾宾浩斯遗忘曲线确定了回顾的重要性，特别是对自己的记忆了的提升有帮助，所以并且有固定的时间做这件事。</p>
+<p>好的，现在终于发现了原因</p>
+<ol>
+<li>固定的时间做固定的事是成功的关键。</li>
+<li>阶段性目标的达成是自己努力达成的非常重要的动力。</li>
+<li>怎么做更好是系统越来越好的关键。</li>
+<li>做事需要进行优先级划分。</li>
+<li>做这件事强烈的愿望（重视程度决定是否放弃的关键）</li>
+</ol>
+<h3 id="怎么再次建立">　怎么再次建立</h3><p>使用找出来的原因直接放到目标确立和计划。</p>
+<h3 id="总结">总结</h3><p>要重视这件事，重视系统的建立，不断的习惯使用系统做事。<br>（完）</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/个人管理系统/">个人管理系统</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://shadowlaser.github.io/2015/07/05/建立个人管理系统初步（3）/" data-title="建立个人管理系统初步（3）--反思崩溃 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/07/06/少即是多/" title="少即是多">
+  <strong>上一篇：</strong><br/>
+  <span>
+  少即是多</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/07/04/定位/"  title="定位">
+ <strong>下一篇：</strong><br/> 
+ <span>定位
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目的"><span class="toc-number">1.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么会崩溃"><span class="toc-number">2.</span> <span class="toc-text">为什么会崩溃</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么再次建立"><span class="toc-number">3.</span> <span class="toc-text">　怎么再次建立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/个人管理/" title="个人管理">个人管理<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工作/" title="工作">工作<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/思考/" title="思考">思考<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/技术/" title="技术">技术<sup>20</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活/" title="生活">生活<sup>53</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>21</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/思考/" title="思考">思考<sup>11</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/asp-net/" title="asp.net">asp.net<sup>11</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/成长/" title="成长">成长<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/个人管理/" title="个人管理">个人管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/待解决/" title="待解决">待解决<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/意识/" title="意识">意识<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sql/" title="sql">sql<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/乱/" title="乱">乱<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/反省/" title="反省">反省<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/道术/" title="道术">道术<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/个人管理系统的建立/" title="个人管理系统的建立">个人管理系统的建立<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/idea/" title="idea">idea<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/行为管理/" title="行为管理">行为管理<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科技/" title="科技">科技<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.hiddenwangcc.com/" target="_blank" title="知行在路上">知行在路上</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.gtdlife.com/" target="_blank" title="邹鑫">邹鑫</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.mifengtd.cn/" target="_blank" title="褪墨">褪墨</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1651609663&verifier=a250b04e&dpc=1"></iframe>
+</div>
+
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Shadowlaser in China. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1651609663" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/shadowlaser" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:shadowlaser@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="shadowlaser">shadowlaser</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'shadowlaser';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-43080047-1', 'shadowlaser.github.io');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa193637f5e97566eb59ac9d8a00e6ba5' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
+

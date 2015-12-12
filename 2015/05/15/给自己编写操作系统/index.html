@@ -1,0 +1,606 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>给自己编写操作系统 | Shadowlaser&#39; Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="shadowlaser">
+    
+
+    
+    <meta name="description" content="今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给自己编写操作系统">
+<meta property="og:url" content="http://shadowlaser.github.io/2015/05/15/给自己编写操作系统/index.html">
+<meta property="og:site_name" content="Shadowlaser' Blog">
+<meta property="og:description" content="今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="给自己编写操作系统">
+<meta name="twitter:description" content="今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Shadowlaser&#39; Blog">Shadowlaser&#39; Blog</a></h1>
+				<h2 class="blog-motto">一个.net软件工程师，致力于做一个有思想、有创新能力的软件工程师，奔跑吧！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/categories">Categories</a></li>
+					
+						<li><a href="/tags">Tags</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:shadowlaser.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/05/15/给自己编写操作系统/" title="给自己编写操作系统" itemprop="url">给自己编写操作系统</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-15T14:10:17.000Z" itemprop="datePublished"> 发表于 2015-05-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<pre><code>今天在无意中翻到了个人管理的文章，是关于个人管理系统的建立的，读后深有感触，所以记录下来一些自己的想法。
+</code></pre><a id="more"></a>
+<p>今天读了《做自己的CEO——个人管理系统构建》文章收获颇丰，作者讲述了自己从不会个人管理系统建立之前与之后实施一段时间的对比，这一下子让我想到了之前的自己的一段自己觉得整个世界都在掌控内时期，当时自己使用了个人管理，特别是心境那段时间提升非常迅速的时候，事半功倍，觉得这个世界都变得不同了。</p>
+<p><code>知道的越多觉越得自己越无知</code>，这个感触就是那段时期产生的，当时觉得，世界还可以是这样？事情还可以这么做？原来世界有运转规律的，又觉得自己能干很多事情，以前连想都没有想过的事情，这个时候，总觉得自己太无知了，如果遇到下一个问题怎么办？怎么处理？自己总结了很多，但是总觉得还是不够，然后慢慢的使用总结出来的东西来重新认识整个世界，确实带来了非常大的帮助，可是心底总有点不安，总是在想还有没有其它更好的工具方法来让自己更好的认知这个世界。</p>
+<p>今天读了作者的文章之后，自己恍然大悟，自己就是没有把这些系统的整理出来，形成自己的个人管理系统的一部分，导致了，自己一方面想的非常深入，但是另一方面有如同婴儿一般无知，最终结果使得自己看着非常不和谐，可以想象一下两个极端同时在一个人身上展现，是非常违和的。</p>
+<p>之后自己偶尔会遗忘，时间久了偶尔才会记起自己看世界的工具，文章中作者提到一篇文章，其实自己以前也看过，只不过当时没有意识到《做事靠系统，而不是靠感觉》，人真的很情绪化，这个是本性，又由于你的心智建立在自己主观意识上的，那么必然有时候就是不顶用，靠系统呢，我不用太多的思考，我的个人管理系统已经非常完备的回答了自己下一步干什么，不给自己迷茫或者疑惑、发愣的时间，因为自己的一套系统直接指导自己该怎么处理。</p>
+<p>还有自己零零碎碎的总结，总是没有一套章法，导致了自己同一类型的事情，有可能遗漏了这个，那件事情有可能遗漏了那个，如果建立起来系统的话，把系统的方法都拿出来进行一步步的处理，这样除非系统出了问题，否则肯定没有遗漏的问题的，就算有遗漏，使用monitor进行更新，那么自己的系统就更加完备了。</p>
+<p>自己需要一套个人的管理系统，要是适合自己的，自己个人管理系统需要可以自行进化的，所以自己需要几个monitor系统进行管理自动升级个人管理系统，说了这么多总觉得是自己在编写一个植入我脑袋里的OS，想想还是非常酷的，下面是一个雏形，后面再进行慢慢完善，参考了原文章作者的个人管理系统：</p>
+<ul>
+<li>monitor系统（meta system）<ul>
+<li>更新管理系统 // 对自己已经过时或者错误、不合适的个人管理子系统进行更新，符合CRUD（create、read、update、delete）操作</li>
+<li>反省管理系统 // 最自己的系统不断的进行反思。</li>
+<li>个人成长管理系统</li>
+</ul>
+</li>
+<li>知识管理系统</li>
+<li>学习管理系统</li>
+<li>行为管理系统</li>
+<li>情绪管理系统</li>
+<li>人脉管理系统</li>
+<li>家庭管理系统</li>
+<li>目标管理系统</li>
+<li>财富管理系统</li>
+<li>健康管理系统</li>
+<li>个人品牌管理系统</li>
+<li>视野管理系统  </li>
+</ul>
+<p>以上就是自己现在能想到的几个系统的雏形，在以后还需要不断的详细进行完善，最终靠系统进行跟人升级，早日达到像作者那样的感觉，自己把作者blog的链接也贴到自己的blog上。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/个人管理/">个人管理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/升级/">升级</a><a href="/tags/思考/">思考</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://shadowlaser.github.io/2015/05/15/给自己编写操作系统/" data-title="给自己编写操作系统 | Shadowlaser&#39; Blog" data-tsina="1651609663" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/05/16/建立个人管理系统初步（1）/" title="建立个人管理系统初步（1）">
+  <strong>上一篇：</strong><br/>
+  <span>
+  建立个人管理系统初步（1）</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/05/14/今天工作时有一定时间进行了思考/"  title="今天工作时有一定时间进行了思考">
+ <strong>下一篇：</strong><br/> 
+ <span>今天工作时有一定时间进行了思考
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/个人管理/" title="个人管理">个人管理<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工作/" title="工作">工作<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/思考/" title="思考">思考<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/技术/" title="技术">技术<sup>20</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活/" title="生活">生活<sup>53</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>21</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/思考/" title="思考">思考<sup>11</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/asp-net/" title="asp.net">asp.net<sup>11</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/成长/" title="成长">成长<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/个人管理/" title="个人管理">个人管理<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/待解决/" title="待解决">待解决<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/js/" title="js">js<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/意识/" title="意识">意识<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/sql/" title="sql">sql<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/乱/" title="乱">乱<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/反省/" title="反省">反省<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/道术/" title="道术">道术<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/个人管理系统的建立/" title="个人管理系统的建立">个人管理系统的建立<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/idea/" title="idea">idea<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/行为管理/" title="行为管理">行为管理<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/科技/" title="科技">科技<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.hiddenwangcc.com/" target="_blank" title="知行在路上">知行在路上</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.gtdlife.com/" target="_blank" title="邹鑫">邹鑫</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.mifengtd.cn/" target="_blank" title="褪墨">褪墨</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1651609663&verifier=a250b04e&dpc=1"></iframe>
+</div>
+
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Shadowlaser in China. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1651609663" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/shadowlaser" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:shadowlaser@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="shadowlaser">shadowlaser</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'shadowlaser';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-43080047-1', 'shadowlaser.github.io');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa193637f5e97566eb59ac9d8a00e6ba5' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
+
