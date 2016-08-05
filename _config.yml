@@ -9,7 +9,7 @@ description: 执着于目标，欣赏沿途的风景
 author: shadowlaser
 avatar: css/images/avatar.png
 follow: https://github.com/shadowlaser/
-language: zh-CN
+language: zh-Hans
 timezone:
 simple_search: https://www.baidu.com/search
 
@@ -72,7 +72,7 @@ theme: next
 deploy:
   type:
 #Comment
-duoshuo_shortname: shadowlaser
+duoshuo_shortname: jinglei
 disqus_shortname: shadowlaser
 
 #time from
