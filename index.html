@@ -1,18 +1,90 @@
+<!doctype html>
 
- <!DOCTYPE HTML>
-<html lang="zh-CN">
-<head>
-  <script type='text/javascript'>window._ty_rum||function(){function sf(t){switch(typeof t){case"object":if(!t)return"null";if(t instanceof Array){for(var e="[",r=0;r<t.length;r++)e+=(r>0?",":"")+sf(t[r]);return e+"]"}var e="{",r=0;for(var n in t)"function"!=typeof t[n]&&(e+=(r>0?",":"")+sf(n)+":"+sf(t[n]),r++);return e+"}";case"string":return'"'+t.replace(/([\"\\])/g,"\\$1")+'"';case"number":return t.toString();case"boolean":return t?"true":"false";case"function":return"[function]";case"undefined":default:return"undefined"}}function now(){return Date.now?Date.now():(new Date).valueOf()}function enc(t){return wd.encodeURIComponent?encodeURIComponent(t):t}function hrs(t){return function(){}}function odl(){mc.ied()}function och(){"complete"===dc.readyState&&mc.ied()}function owl(t){function e(){mc.sd()}return ty_rum.load_time?!0:(mc.ied(),ty_rum.load_time=now(),void(9===t?e():setTimeout(e,0)))}function owu(){ul||owl(9),ul=1}function ot(){mc.touch||(mc.touch=now())}function oe(t){var e=arguments,r="unknown",n=[now()];if(0!=e.length){if("string"==typeof t){var a=e.length<4?e.length:4;n[1]=e[0],a>2&&(n[2]=e[2],n[3]=0,n[4]=e[1]),a>3&&e[3]&&(n[3]=e[3])}else if(t instanceof Event&&(n[1]=t.message||(t.error&&t.error.constructor.name)+(t.error&&t.error.message)||"",n[2]=t.lineno?t.lineno:0,n[3]=t.colno?t.colno:0,n[4]=t.filename||t.error&&t.error.fileName||t.target&&t.target.baseURI||"",n[4]==dc.URL&&(n[4]="#"),n[1]===r&&n[4]===r))return;mc.e.push(n)}}function thiscall(o,m,a){for(var f="o."+m+"(",i=0;i<a.length;i++)f+=(i>0?",":"")+"a["+i+"]";return f+=");",eval(f)}function wp_open(t){return function(){var e=arguments,r=this;if(!r._ty_wrap){var n=ut.ag.apply(r,e);r._ty_rum={method:n[0],url:n[1],start:now()}}try{return t.apply(r,e)}catch(a){return r.open=t,thiscall(r,"open",e)}}}function sz(t){return"string"==typeof t?t.length:ArrayBuffer&&t instanceof ArrayBuffer?t.byteLength:Blob&&t instanceof Blob?t.size:t.length?t.length:0}function wp_send(t){return function(){function e(t){var e=u._ty_rum;if(e){if(4!==e.readyState&&(e.end=now()),e.s=u.status,e.res=sz(u.responseText),e.readyState=u.readyState,e.cb_time=s,ty_rum.aa.push([e.method+" "+e.url,e.s>0?e.end-e.start:0,s,e.s,e.s>0?0:t,e.res,e.req]),ty_rum.server.custom_urls&&ty_rum.server.custom_urls.length&&!mc.ct){if(!ty_rum.pattern){ty_rum.pattern=[];for(var r=0;r<ty_rum.server.custom_urls.length;r++)ty_rum.pattern.push(new RegExp(ty_rum.server.custom_urls[r]))}for(var r=0;r<ty_rum.pattern.length;r++)if(e.url.match(ty_rum.pattern[r])){mc.ct=e.end+s;break}}mc.sa(),u._ty_rum=null}}function r(){4==u.readyState&&e(0)}function n(t){return function(){var e;4==u.readyState&&u._ty_rum&&(u._ty_rum.end=e=now(),u._ty_rum.readyState=4);var n=t.apply(this,arguments);return 4==u.readyState&&(s=now()-e),r(),n}}function a(t){return function(){var r=u._ty_rum;return r?"progress"==t?!0:("abort"==t?e(905):"loadstart"==t?r.start=now():"error"==t?e(990):"timeout"==t&&e(903),!0):!0}}function o(t,e){e instanceof Array||(e=[e]);for(var r=0;r<e.length;r++){var n=e[r];ut.sh(t,n,a(n),!1)}}if(!this._ty_wrap){this._ty_rum.start=now(),this._ty_rum.req=arguments[0]?sz(arguments[0]):0;var u=this,s=0,i=ut.wp(!1,this,"onreadystatechange",n);i||ut.sh(this,"readystatechange",r,!1),o(this,["error","progress","abort","load","loadstart","loadend","timeout"]),i||setTimeout(function(){ut.wp(!1,u,"onreadystatechange",n)},0)}var c=arguments;try{return t.apply(this,c)}catch(m){return this.send=t,thiscall(this,"send",c)}}}var wd=window,xr=wd.XMLHttpRequest,dc=document,ty_rum=wd._ty_rum={st:now(),ra:[],aa:[],snd_du:function(){return this.server.adu?1e3*this.server.adu:1e4},cc:function(){return this.server.ac?this.server.ac:10}};ty_rum.server = {beacon:'beacon.tingyun.com',beacon_err:'beacon-err.tingyun.com',key:'h0fzXw6mvQw',trace_threshold:40000,custom_urls:[],sr:1.0};if(ty_rum.server&&!(ty_rum.server.sr&&Math.random()>=ty_rum.server.sr)){var ut={wp:function(t,e,r,n,a){var o;try{o=e[r]}catch(u){if(!t)return!1}if(!o&&!t)return!1;if(o&&o._ty_wrap)return!1;try{e[r]=n(o,a)}catch(u){return!1}return e[r]._ty_wrap=[o],!0},mu:function(t,e){var r=arguments,n=dc.URL.match(/^([a-zA-Z]+:)/)[0]+"//"+t+"/"+e+"?v=1.1.0&key="+enc(ty_rum.server.key)+"&ref="+enc(dc.URL)+"&rand="+now();if(r.length>2){var a=r[2];for(var o in a)n+="&"+o+"="+a[o]}return n},gt:function(t,e){function r(){e&&e.apply(this,arguments),n.parentNode&&n.parentNode.removeChild(n)}var n=dc.createElement("script");n.type="text/javascript",n.src=t,ut.sh(n,"readystatechange",function(){("loaded"==n.readyState||4==n.readyState)&&r(null,n.innerHTML)},!1),ut.sh(n,"load",function(){return r(null,n.innerHTML),!0},!1),ut.sh(n,"error",function(){return r("error",n.innerHTML),!0},!1);var a=dc.getElementsByTagName("script")[0];return a.parentNode.insertBefore(n,a)?n:void 0},fpt:function(t,e,r){function n(t,e,r){var n=dc.createElement(t);try{for(var a in e)n[a]=e[a]}catch(o){var u="<"+t;for(var a in e)u+=" "+a+'="'+e[a]+'"';u+=">",r||(u+="</"+t+">"),n=dc.createElement(u)}return n}var a=n("div",{style:"display:none"},!1),o=n("iframe",{name:"_ty_rum_frm",width:0,height:0,style:"display:none"},!1),u=n("form",{style:"display:none",action:t,enctype:"application/x-www-form-urlencoded",method:"post",target:"_ty_rum_frm"},!1),s=n("input",{name:"err",type:"hidden"},!0);return s.value=e,u.appendChild(s),a.appendChild(o),a.appendChild(u),dc.body.appendChild(a),u.submit(),o.onreadystatechange=function(){("complete"===o.readyState||4===o.readyState)&&(r(null,o.innerHTML),dc.body.removeChild(a))},!0},pt:function(t,e,r,n){if(navigator&&navigator.sendBeacon)return navigator.sendBeacon(t,e);if(ut.ie)return ut.fpt(t,e,n);var a;if(wd.XDomainRequest)return a=new XDomainRequest,a.open("POST",t),a.onload=function(){n(null,a.responseText)},ut.sh(a,"load",function(){n(null,a.responseText)},!1),ut.sh(a,"error",function(){n("POST("+t+")error")},!1),ut.wp(!0,a,"onerror",function(t){return function(){return n&&n("post error",a.responseText),!0}}),a.send(e),!0;if(!xr)return!1;a=new xr,a.overrideMimeType&&a.overrideMimeType("text/html");try{a._ty_wrap=1}catch(o){}var u=0;a.onreadystatechange=function(){4==a.readyState&&200==a.status&&(0==u&&n(null,a.responseText),u++)},a.onerror&&ut.wp(!0,a,"onerror",function(t){return function(){return n("post error",a.responseText),"function"==typeof t?t.apply(this,arguments):!0}});try{a.open("POST",t,!0)}catch(o){return ut.fpt(t,e,n)}for(var s in r)a.setRequestHeader(s,r[s]);return a.send(e),!0},sh:function(t,e,r,n){return t.addEventListener?t.addEventListener(e,r,n):t.attachEvent?t.attachEvent("on"+e,r):!1},ag:function(){for(var t=[],e=0;e<arguments.length;e++)t.push(arguments[e]);return t}},pf=wd.performance?wd.performance:wd.Performance;pf&&(ut.sh(pf,"resourcetimingbufferfull",function(){var t=pf.getEntriesByType("resource");t&&(ty_rum.ra=ty_rum.ra.concat(t),pf.clearResourceTimings())},!1),ut.sh(pf,"webkitresourcetimingbufferfull",function(){var t=pf.getEntriesByType("resource");t&&(ty_rum.ra=ty_rum.ra.concat(t),pf.webkitClearResourceTimings())},!1));for(var mc=ty_rum.mc={rd:function(){return ty_rum.load_time},ied:function(){function t(){mc.sa()}ty_rum.end_time||(ty_rum.end_time=now(),mc._h=setInterval(t,2e3))},sd:function(){function t(){function t(t){return n[t]>0?n[t]-r:0}var e={};if(pf&&pf.timing){var n=pf.timing;r=n.navigationStart;var a=t("domainLookupStart"),o=t("domainLookupEnd"),u=t("redirectStart"),s=t("redirectEnd"),i=t("connectStart"),c=t("connectEnd");e={f:t("fetchStart"),qs:t("requestStart"),rs:t("responseStart"),re:t("responseEnd"),os:t("domContentLoadedEventStart"),oe:t("domContentLoadedEventEnd"),oi:t("domInteractive"),oc:t("domComplete"),ls:t("loadEventStart"),le:t("loadEventEnd")},c-i>0&&(e.cs=i,e.ce=c),o-a>0&&(e.ds=a,e.de=o),(s-u>0||s>0)&&(e.es=u,e.ee=s),0==e.le&&(e.ue=ty_rum.load_time-r);var m;if(n.msFirstPaint)m=n.msFirstPaint;else if(wd.chrome&&chrome.loadTimes){var d=chrome.loadTimes();d&&d.firstPaintTime&&(m=1e3*d.firstPaintTime)}else ty_rum.fp&&(m=ty_rum.fp);m&&(e.fp=Math.round(m-r)),n.secureConnectionStart&&(e.sl=t("secureConnectionStart"))}else e={t:r,os:ty_rum.end_time-r,ls:ty_rum.load_time-r};e.je=mc.e.length,mc.ct&&(e.ct=mc.ct-r),mc.touch&&(e.fi=mc.touch-r);var f=ty_rum.agent;return f&&(e.id=enc(f.id),e.a=f.a,e.q=f.q,e.tid=enc(f.tid),e.n=enc(f.n)),e}function e(t){function e(t){return s[t]>0?s[t]:0}if(t<ty_rum.server.trace_threshold)return null;if(pf&&pf.getEntriesByType){var n={tr:!0,tt:enc(dc.title),charset:dc.characterSet},a=ty_rum.ra,o=pf.getEntriesByType("resource");o&&(a=a.concat(o),pf.webkitClearResourceTimings&&pf.webkitClearResourceTimings(),pf.clearResourceTimings&&pf.clearResourceTimings()),n.res=[];for(var u=0;u<a.length;u++){var s=a[u];n.res.push({o:e("startTime"),rt:s.initiatorType,n:s.name,f:e("fetchStart"),ds:e("domainLookupStart"),de:e("domainLookupEnd"),cs:e("connectStart"),ce:e("connectEnd"),sl:e("secureConnectionStart"),qs:e("requestStart"),rs:e("responseStart"),re:e("responseEnd")})}if(mc.e.length){n.err=[];for(var u=0,i=mc.e;u<mc.e.length;u++)n.err.push({o:Math.round(i[u][0]-r),e:i[u][1],l:i[u][2],c:i[u][3],r:i[u][4]})}return n}return null}if(mc.sended)return!1;if(!mc.rd())return!1;var r=ty_rum.st,n={},a={};try{a=t(),n=e(a.ls>0?a.ls:ty_rum.load_time-r)}catch(o){}n=n?sf(n):"";var u=ut.mu(ty_rum.server.beacon,"pf",a);if(0!=n.length&&ut.pt(u,n,{},hrs("POST"))||ut.gt(u),mc.e.length>0){var o=mc.e[0];ut.gt(ut.mu(ty_rum.server.beacon_err,"err",{data:enc(sf([o[1],o[2],o[3],"#"==o[4]?dc.URL:o[4],mc.e.length]))}),hrs("GET err"))}return mc.sended=!0,mc.sa(1),!0},sa:function(t){(mc.rd()||t)&&(t||(t=!mc._last_send||now()-mc._last_send>ty_rum.snd_du()||ty_rum.aa.length>=ty_rum.cc()),ty_rum.aa.length>0&&t&&(mc._last_send=now(),ut.pt(ut.mu(ty_rum.server.beacon,"xhr"),sf({xhr:ty_rum.aa}),{},hrs("POST")),ty_rum.aa=[]))},e:[]},ul=null,l=[["load",owl],["beforeunload",owu],["pagehide",owu],["unload",owu],["error",oe]],i=0;i<l.length;i++)ut.sh(wd,l[i][0],l[i][1],!1);l=[["scroll",ot],["keypress",ot],["click",ot],["DOMContentLoaded",odl],["readystatechange",och]];for(var i=0;i<l.length;i++)ut.sh(dc,l[i][0],l[i][1],!1);if(ut.wp(!1,wd,"requestAnimationFrame",function(t){return function(){return ty_rum.fp=now(),wd.requestAnimationFrame=t,t.apply(this,arguments)}}),xr)if(xr.prototype)ut.wp(!1,xr.prototype,"open",wp_open),ut.wp(!1,xr.prototype,"send",wp_send);else{ut.ie=7;var x=xr;wd.XMLHttpRequest=function(){var t=new x;return ut.wp(!1,t,"open",wp_open),ut.wp(!1,t,"send",wp_send),t}}else wd.ActiveXObject&&(ut.ie=6);}}();</script>
-  <meta charset="UTF-8">
+
+
   
-    <title>Shadowlaser&#39; Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="shadowlaser">
-    
 
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-    <meta name="description" content="执着于目标，欣赏沿途的风景">
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="执着于目标，欣赏沿途的风景">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shadowlaser' Blog">
 <meta property="og:url" content="http://shadowlaser.github.io/index.html">
@@ -22,1063 +94,1578 @@
 <meta name="twitter:title" content="Shadowlaser' Blog">
 <meta name="twitter:description" content="执着于目标，欣赏沿途的风景">
 
-    
-    <link rel="alternative" href="/atom.xml" title="Shadowlaser&#39; Blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://shadowlaser.github.io/"/>
+
+  <title> Shadowlaser' Blog </title>
 </head>
 
-  <body>
-    <header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Shadowlaser' Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个.net软件工程师，致力于做一个有思想、有创新能力的软件工程师，奔跑吧！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-<div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Shadowlaser&#39; Blog">Shadowlaser&#39; Blog</a></h1>
-				<h2 class="blog-motto">一个.net软件工程师，致力于做一个有思想、有创新能力的软件工程师，奔跑吧！</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/categories">Categories</a></li>
-					
-						<li><a href="/tags">Tags</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:shadowlaser.github.io">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
     </header>
-    <div id="container">
-      <div id="main">
 
-   
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/16/怎么才算努力/" title="怎么才算努力" itemprop="url">怎么才算努力</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-16T13:15:56.000Z" itemprop="datePublished"> 发表于 2015-07-16</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>这几天经常接到面试的电话，很有意思发现了这些打电话的人事基本上分为了两类（在我说出我已经找到工作了之后）。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/16/怎么才算努力/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+      
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/个人成长/">个人成长</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/16/怎么才算努力/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/15/反省回顾系统初步建立完成/" title="反省回顾系统初步建立完成" itemprop="url">反省回顾系统初步建立完成</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-15T13:11:55.000Z" itemprop="datePublished"> 发表于 2015-07-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>最近几天在面试一些公司，刚好这几次使用了回顾系统，然后获得了一个比较合适的offer
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/15/反省回顾系统初步建立完成/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/个人管理/">个人管理</a>
-  </div>
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/15/反省回顾系统初步建立完成/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/14/精准打击2/" title="精准打击2" itemprop="url">精准打击2</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-14T13:23:22.000Z" itemprop="datePublished"> 发表于 2015-07-14</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>最近一段时间做精准打击性的训练做得不错，证明了针对性的做事情需要。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/14/精准打击2/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/个人管理/">个人管理</a><a href="/tags/成长反馈/">成长反馈</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/14/精准打击2/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/13/反馈周期/" title="反馈周期" itemprop="url">反馈周期</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-13T13:04:29.000Z" itemprop="datePublished"> 发表于 2015-07-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>很多需要坚持的东西，需要一个类似于游戏化的概念，这个概念叫做<span class="string">'反馈周期'</span>。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/13/反馈周期/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/个人管理系统/">个人管理系统</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/13/反馈周期/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/08/记忆宫殿/" title="记忆宫殿" itemprop="url">记忆宫殿</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-08T12:46:50.000Z" itemprop="datePublished"> 发表于 2015-07-08</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>自己记忆力不好，于是在学习怎么才能更快更好的记住事情，找到了记忆宫殿的记忆方法，特别是看了神探夏洛克之后，一直很着迷，这次好好的学习一下。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/08/记忆宫殿/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/记忆术/">记忆术</a>
-  </div>
 
-</div>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/08/记忆宫殿/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/07/不自律的惯性/" title="不自律的惯性" itemprop="url">不自律的惯性</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-07T13:45:11.000Z" itemprop="datePublished"> 发表于 2015-07-07</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>今天彻底感受了一把不自律下，自己的行为惯性有多大，非常的令人震惊。
-</code></pre>
+      <header class="post-header">
+
         
         
-        <p class="article-more-link">
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/04/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-04T20:22:49+08:00" content="2016-08-04">
+              2016-08-04
+            </time>
+          </span>
+
           
-            <a href="/2015/07/07/不自律的惯性/#more">Read More</a>
+
           
-       </p>
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/04/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/04/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/个人成长/">个人成长</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/07/不自律的惯性/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/06/少即是多/" title="少即是多" itemprop="url">少即是多</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-06T12:39:43.000Z" itemprop="datePublished"> 发表于 2015-07-06</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>少即是多，这是最近自己在建立个人管理系统的时候总结了一下自己所犯的错误的出来的结论。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/06/少即是多/#more">Read More</a>
-          
-       </p>
+    <div>
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/个人成长/">个人成长</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/06/少即是多/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/05/建立个人管理系统初步（3）/" title="建立个人管理系统初步（3）--反思崩溃" itemprop="url">建立个人管理系统初步（3）--反思崩溃</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-05T13:24:30.000Z" itemprop="datePublished"> 发表于 2015-07-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <pre><code>在这些日子里终于遇到个人管理系统的完全奔溃了，这个已经是预想到的事情，不过稍微有点晚才发现，真是不可思议，在不断的意志消耗中，最终现在才完全发现整体上已经奔溃，部分系统还是在运转，并且还有新的系统在不断完善.
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/05/建立个人管理系统初步（3）/#more">Read More</a>
-          
-       </p>
+    <div>
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
-  <div class="article-tags">
+    
+      
+
   
-  <span></span> <a href="/tags/个人管理系统/">个人管理系统</a>
-  </div>
+  
 
-</div>
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/05/建立个人管理系统初步（3）/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/04/定位/" title="定位" itemprop="url">定位</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-04T13:48:52.000Z" itemprop="datePublished"> 发表于 2015-07-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
+      <header class="post-header">
+
         
-        <pre><code>看了一篇文章说的是那些优秀的剩下的女性找到自己想要丈夫的故事，其中一个女人是做营销的，使用了营销理念在自己找配偶的路上，并且成功。
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/16/怎么才算努力/" itemprop="url">
+                  怎么才算努力
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-16T21:15:56+08:00" content="2015-07-16">
+              2015-07-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/16/怎么才算努力/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/16/怎么才算努力/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>这几天经常接到面试的电话，很有意思发现了这些打电话的人事基本上分为了两类（在我说出我已经找到工作了之后）。
 </code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/16/怎么才算努力/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/04/定位/#more">Read More</a>
-          
-       </p>
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
-  <div class="article-tags">
+    
+      
+
   
-  <span></span> <a href="/tags/意识/">意识</a>
-  </div>
+  
 
-</div>
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/04/定位/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/03/提高效率-意识/" title="提高效率--意识" itemprop="url">提高效率--意识</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="shadowlaser" target="_blank" itemprop="author">shadowlaser</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-03T14:01:45.000Z" itemprop="datePublished"> 发表于 2015-07-03</time>
-    
-  </p>
-</header>
-    <div class="article-content">
+      <header class="post-header">
+
         
-        <pre><code>在以前选择做事的时候，一直都是开始做，然后做着做着就知道自己哪块方法有问题或者方向错误，这个是之前的效率低的原因，也是由于生活惯性一直这么思考的，从来没有想过为什么要这么做，为什么不找其他的方法呢等等。
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/15/反省回顾系统初步建立完成/" itemprop="url">
+                  反省回顾系统初步建立完成
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-15T21:11:55+08:00" content="2015-07-15">
+              2015-07-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/15/反省回顾系统初步建立完成/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/15/反省回顾系统初步建立完成/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>最近几天在面试一些公司，刚好这几次使用了回顾系统，然后获得了一个比较合适的offer
 </code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/15/反省回顾系统初步建立完成/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/03/提高效率-意识/#more">Read More</a>
-          
-       </p>
+      
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
-</div>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
-  <div class="article-tags">
+    
+      
+
   
-  <span></span> <a href="/tags/意识/">意识</a>
-  </div>
+  
 
-</div>
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/14/精准打击2/" itemprop="url">
+                  精准打击2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-14T21:23:22+08:00" content="2015-07-14">
+              2015-07-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/14/精准打击2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/精准打击2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>最近一段时间做精准打击性的训练做得不错，证明了针对性的做事情需要。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/14/精准打击2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/03/提高效率-意识/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
+    
+      
 
-</footer>
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/13/反馈周期/" itemprop="url">
+                  反馈周期
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-13T21:04:29+08:00" content="2015-07-13">
+              2015-07-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/13/反馈周期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/13/反馈周期/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
-    </article>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>很多需要坚持的东西，需要一个类似于游戏化的概念，这个概念叫做&apos;反馈周期&apos;。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/13/反馈周期/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/08/记忆宫殿/" itemprop="url">
+                  记忆宫殿
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-08T20:46:50+08:00" content="2015-07-08">
+              2015-07-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/08/记忆宫殿/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/08/记忆宫殿/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>自己记忆力不好，于是在学习怎么才能更快更好的记住事情，找到了记忆宫殿的记忆方法，特别是看了神探夏洛克之后，一直很着迷，这次好好的学习一下。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/08/记忆宫殿/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
+    
+      
 
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/07/不自律的惯性/" itemprop="url">
+                  不自律的惯性
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-07T21:45:11+08:00" content="2015-07-07">
+              2015-07-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/07/不自律的惯性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/07/不自律的惯性/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>今天彻底感受了一把不自律下，自己的行为惯性有多大，非常的令人震惊。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/07/不自律的惯性/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/06/少即是多/" itemprop="url">
+                  少即是多
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-06T20:39:43+08:00" content="2015-07-06">
+              2015-07-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/06/少即是多/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/少即是多/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>少即是多，这是最近自己在建立个人管理系统的时候总结了一下自己所犯的错误的出来的结论。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/06/少即是多/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/05/建立个人管理系统初步（3）/" itemprop="url">
+                  建立个人管理系统初步（3）--反思崩溃
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-05T21:24:30+08:00" content="2015-07-05">
+              2015-07-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/05/建立个人管理系统初步（3）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/建立个人管理系统初步（3）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>在这些日子里终于遇到个人管理系统的完全奔溃了，这个已经是预想到的事情，不过稍微有点晚才发现，真是不可思议，在不断的意志消耗中，最终现在才完全发现整体上已经奔溃，部分系统还是在运转，并且还有新的系统在不断完善.
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/05/建立个人管理系统初步（3）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/04/定位/" itemprop="url">
+                  定位
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-07-04T21:48:52+08:00" content="2015-07-04">
+              2015-07-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/04/定位/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/04/定位/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code>看了一篇文章说的是那些优秀的剩下的女性找到自己想要丈夫的故事，其中一个女人是做营销的，使用了营销理念在自己找配偶的路上，并且成功。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/04/定位/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
 
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/个人管理/" title="个人管理">个人管理<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/工作/" title="工作">工作<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/思考/" title="思考">思考<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/技术/" title="技术">技术<sup>20</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/生活/" title="生活">生活<sup>53</sup></a></li>
-		  
-		
-		</ul>
-</div>
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/个人成长/" title="个人成长">个人成长<sup>21</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/思考/" title="思考">思考<sup>11</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/asp-net/" title="asp.net">asp.net<sup>11</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/成长/" title="成长">成长<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/个人管理系统/" title="个人管理系统">个人管理系统<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/个人管理/" title="个人管理">个人管理<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/杂/" title="杂">杂<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/database/" title="database">database<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/待解决/" title="待解决">待解决<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/js/" title="js">js<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/意识/" title="意识">意识<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/sql/" title="sql">sql<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/乱/" title="乱">乱<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/反省/" title="反省">反省<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/道术/" title="道术">道术<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/个人管理系统的建立/" title="个人管理系统的建立">个人管理系统的建立<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/idea/" title="idea">idea<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/行为管理/" title="行为管理">行为管理<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/科技/" title="科技">科技<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
-        
-          <li>
-            
-            	<a href="http://blog.hiddenwangcc.com/" target="_blank" title="知行在路上">知行在路上</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://www.gtdlife.com/" target="_blank" title="邹鑫">邹鑫</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://www.mifengtd.cn/" target="_blank" title="褪墨">褪墨</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1651609663&verifier=a250b04e&dpc=1"></iframe>
-</div>
-
-
-  
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
-</div>
-
-</aside>
-</div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m Shadowlaser in China. <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/1651609663" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/shadowlaser" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<a href="mailto:shadowlaser@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
+  </div>
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
-		
-		<a href="/about" target="_blank" title="shadowlaser">shadowlaser</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/css/images/avatar.png"
+               alt="shadowlaser" />
+          <p class="site-author-name" itemprop="name">shadowlaser</p>
+          <p class="site-description motion-element" itemprop="description">执着于目标，欣赏沿途的风景</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
         
-    }
-  });
-});
-</script>
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
+    </div>
+  </aside>
 
 
+        
+      </div>
+    </main>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shadowlaser</span>
+</div>
 
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
 
 <script type="text/javascript">
-
-var disqus_shortname = 'shadowlaser';
-
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-}); 
 </script>
 
 
 
-<!-- Analytics Begin -->
-
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-43080047-1', 'shadowlaser.github.io');  
-ga('send', 'pageview');
-</script>
 
 
 
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa193637f5e97566eb59ac9d8a00e6ba5' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
 
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
+  
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-<!-- Tiny_search End -->
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  </body>
- </html>
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"shadowlaser"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
